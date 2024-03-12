@@ -1,7 +1,7 @@
 # Bigamer
-Семестровая работа по проекту Bigamer. //
-Template: https://fixcode.ru/templates/html/bigamer/ //
-Miro-доска с картой сайта: https://miro.com/app/board/uXjVNivPtJ8=/?share_link_id=574913443925 //
+Семестровая работа по проекту Bigamer. \
+Template: https://fixcode.ru/templates/html/bigamer/ \
+Miro-доска с картой сайта: https://miro.com/app/board/uXjVNivPtJ8=/?share_link_id=574913443925 \
 
  # Техническое задание
 1. Реализовать User Interface (UI) для веб-приложения в соответствии с заданным макетом (Template).
@@ -20,11 +20,11 @@ Miro-доска с картой сайта: https://miro.com/app/board/uXjVNivPt
 6. Для реализации чата с тех-поддержкой будет использована библиотека __SignalR__.
 
 # Структура сайта
-https://octopus.do/754jvl25663 //
+https://octopus.do/754jvl25663 \
 Карта сайта (см. выше)
 
 # База данных
-Концептуальная модель БД: https://lucid.app/lucidchart/17923a74-727e-4747-be97-c6358105d562/edit?viewport_loc=-19%2C-75%2C2731%2C1359%2C0_0&invitationId=inv_24a31cf9-1133-468c-ab16-6ef5e5360db3 //
+Концептуальная модель БД: https://lucid.app/lucidchart/17923a74-727e-4747-be97-c6358105d562/edit?viewport_loc=-19%2C-75%2C2731%2C1359%2C0_0&invitationId=inv_24a31cf9-1133-468c-ab16-6ef5e5360db3 \
 ER-модель БД: _
 
 # Роли
