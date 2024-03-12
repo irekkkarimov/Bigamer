@@ -21,7 +21,7 @@
 6. Для реализации Live-уведомлений будет использована библиотека __SignalR__.
 
 # База данных
-[__Концептуальная модель__](https://lucid.app/lucidchart/17923a74-727e-4747-be97-c6358105d562/edit?viewport_loc=-19%2C-75%2C2731%2C1359%2C0_0&invitationId=inv_24a31cf9-1133-468c-ab16-6ef5e5360db3) БД: \
+[__Концептуальная модель__ БД](https://lucid.app/lucidchart/17923a74-727e-4747-be97-c6358105d562/edit?viewport_loc=-19%2C-75%2C2731%2C1359%2C0_0&invitationId=inv_24a31cf9-1133-468c-ab16-6ef5e5360db3) \
 __ER-модель__ БД: _
 
 # Роли
