@@ -20,7 +20,7 @@ Miro-доска с картой сайта: https://miro.com/app/board/uXjVNivPt
 6. Для реализации чата с тех-поддержкой будет использована библиотека __SignalR__.
 
 # Структура сайта
-<iframe title="Octopus.do visual sitemap" width="800" height="450" src="https://octopus.do/embed/754jvl25663"></iframe>
+https://octopus.do/754jvl25663
 Карта сайта (см. выше)
 
 # База данных
