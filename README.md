@@ -1,8 +1,8 @@
 # Bigamer
 Семестровая работа по проекту Bigamer. \
-[Template](https://fixcode.ru/templates/html/bigamer/) \
-[Структура сайта](https://octopus.do/754jvl25663) \
-[Miro-доска с картой сайта](https://miro.com/app/board/uXjVNivPtJ8=/?share_link_id=574913443925) 
+[__Template__](https://fixcode.ru/templates/html/bigamer/) \
+[__Структура сайта__](https://octopus.do/754jvl25663) \
+[__Miro-доска с картой сайта__](https://miro.com/app/board/uXjVNivPtJ8=/?share_link_id=574913443925) 
 
  # Техническое задание
 1. Реализовать User Interface (UI) для веб-приложения в соответствии с заданным макетом (Template).
