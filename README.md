@@ -1,6 +1,6 @@
 # Bigamer
 Семестровая работа по проекту Bigamer. \
-Template: https://fixcode.ru/templates/html/bigamer/ \
+Template: https://fixcode.ru/templates/html/bigamer/(Template) \
 Miro-доска с картой сайта: https://miro.com/app/board/uXjVNivPtJ8=/?share_link_id=574913443925 
 
  # Техническое задание
