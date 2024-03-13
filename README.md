@@ -22,7 +22,8 @@
 
 # База данных
 [__Концептуальная модель__ БД](https://lucid.app/lucidchart/17923a74-727e-4747-be97-c6358105d562/edit?viewport_loc=-19%2C-75%2C2731%2C1359%2C0_0&invitationId=inv_24a31cf9-1133-468c-ab16-6ef5e5360db3) \
-__ER-модель__ БД: _
+[__ER-модель__ БД](https://drawsql.app/teams/ireks-team/diagrams/bigamer): ![image](https://github.com/irekkkarimov/Bigamer/assets/113981426/1a4ca664-be3a-4fa3-acc6-57c0bacc01df)
+
 
 # Роли
 1. __Пользователь__: 2. Просматривать все матчи (сегодняшние и недавние), 3. Просматривать информацию о команде.
