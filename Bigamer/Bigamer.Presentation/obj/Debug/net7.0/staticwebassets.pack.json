@@ -1,0 +1,1205 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Bigamer.Presentation.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Bigamer.Presentation.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\fonts\\icofont.eot",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\icofont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\fonts\\icofont.svg",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\icofont.svg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\fonts\\icofont.ttf",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\icofont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\fonts\\icofont.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\icofont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\fonts\\icofont.woff2",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\icofont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\icofont.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\icofont.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\lightcase.css",
+      "PackagePath": "staticwebassets\\assets\\css\\lightcase.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\style.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\style.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\css\\swiper.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\swiper.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\fonts\\lightcase.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\lightcase.eot"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\fonts\\lightcase.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\lightcase.svg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\fonts\\lightcase.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\lightcase.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\fonts\\lightcase.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\lightcase.woff"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\404.png",
+      "PackagePath": "staticwebassets\\assets\\images\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\about\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\about\\icon-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\icon-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\about\\icon-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\icon-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\about\\icon-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\about\\icon-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\04.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\05.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\06.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\07.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\achivement\\08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\achivement\\08.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\vs.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\vs.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\05.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\06.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\07.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\07.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\08.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\09.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\09.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\12.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\13.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\author\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\author\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\author\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\author\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\p-post\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\p-post\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\p-post\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\p-post\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\p-post\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\p-post\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\p-post\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\p-post\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\single\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\single\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\single\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\single\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\blog\\single\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\single\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\clients\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\clients\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\clients\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\clients\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\contact\\icon\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\contact\\icon\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\contact\\icon\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\contact\\icon\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\contact\\icon\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\contact\\icon\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\cta\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\cta\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\cta\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cta\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\icons\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\icons\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\icons\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\icons\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\footer\\icons\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\footer\\icons\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\05.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\06.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\07.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\07.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\08.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\gallery\\09.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\gallery\\09.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\04.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\05.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\06.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\07.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\08.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\game\\bg1.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\game\\bg1.svg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\05.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\06.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\07.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\07.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\08.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\instragram\\09.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\instragram\\09.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\logo\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\social-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\social-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\social-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\social-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\social-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\social-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\team-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\team-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\team-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\team-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-10.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-11.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-12.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-7.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-8.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\teamsm\\teamsm-9.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\teamsm\\teamsm-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\match\\vs.png",
+      "PackagePath": "staticwebassets\\assets\\images\\match\\vs.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\pageheader\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\pageheader\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\05.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\06.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\07.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\07.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\award\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\award\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\award\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\award\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\award\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\award\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\icon\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\icon\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\icon\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\icon\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\icon\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\icon\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\icon\\04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\icon\\04.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\player\\icon\\05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\player\\icon\\05.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\product\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\product\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\product\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\product\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\product\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shape\\body-shape.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shape\\body-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\05.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\06.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\07.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\07.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\08.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\09.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\09.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\del.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\del.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\pp\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\pp\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\pp\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\pp\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\pp\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\pp\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\pp\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\pp\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\shop\\pp\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\shop\\pp\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\03.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\03.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\04.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\04.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\05.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\05.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\06.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\06.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\07.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\07.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\sponsor\\08.png",
+      "PackagePath": "staticwebassets\\assets\\images\\sponsor\\08.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\team\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\bg.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\logo\\01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\logo\\01.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\logo\\02.png",
+      "PackagePath": "staticwebassets\\assets\\images\\testimonial\\logo\\02.png"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\01.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\02.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\03.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\04.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\05.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\06.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\video\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\video\\bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\circularProgressBar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\circularProgressBar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\lightcase.js",
+      "PackagePath": "staticwebassets\\assets\\js\\lightcase.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\swiper.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\swiper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\vendor\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\vendor\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\vendor\\modernizr-3.11.2.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\modernizr-3.11.2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\abstracts\\_mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\abstracts\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\abstracts\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\abstracts\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\base\\_animation.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\base\\_animation.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\base\\_extend.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\base\\_extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\base\\_fonts.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\base\\_fonts.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\base\\_typography.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\base\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\base\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\base\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_blog-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_blog-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_button.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_button.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_contact-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_contact-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_gallery-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_gallery-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_game-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_game-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_match-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_match-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_partner-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_partner-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_player-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_player-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_product-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_product-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_testmonial-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_testmonial-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\components\\_video-item.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\components\\_video-item.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\layout\\_banner.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\layout\\_banner.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\layout\\_footer.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\layout\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\layout\\_global.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\layout\\_global.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\layout\\_header.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\layout\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_accounts.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_accounts.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_achievement.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_achievement.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_cart-page.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_cart-page.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_fore-zere.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_fore-zere.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_home.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_home.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_shop-single.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_shop-single.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\pages\\_shop.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\pages\\_shop.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\style.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\themes\\_default.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\themes\\_default.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\vendors\\_normalize.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\vendors\\_normalize.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\sass\\vendors\\_rfs.scss",
+      "PackagePath": "staticwebassets\\assets\\sass\\vendors\\_rfs.scss"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Bigamer.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Bigamer.Presentation.props",
+      "PackagePath": "build\\Bigamer.Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Bigamer.Presentation.props",
+      "PackagePath": "buildMultiTargeting\\Bigamer.Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Bigamer.Presentation.props",
+      "PackagePath": "buildTransitive\\Bigamer.Presentation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
