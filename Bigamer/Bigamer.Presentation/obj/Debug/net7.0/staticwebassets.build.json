@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p+9EDJPObJkB5jeBwqZt03Bn1MoqVGU3NHwMMyCIRt4=",
+  "Hash": "5Jt4cvdtTYK0LJpSRbHcV6x7LOZAWPB07bjaIDclplc=",
   "Source": "Bigamer.Presentation",
   "BasePath": "_content/Bigamer.Presentation",
   "Mode": "Default",
@@ -4078,6 +4078,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\sass\\vendors\\_rfs.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\css\\main.css",
+      "SourceId": "Bigamer.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bigamer.Presentation",
+      "RelativePath": "css/main.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\main.css"
     },
     {
       "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\favicon.ico",

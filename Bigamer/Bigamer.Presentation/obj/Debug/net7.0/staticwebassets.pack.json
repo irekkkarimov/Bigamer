@@ -953,6 +953,10 @@
       "PackagePath": "staticwebassets\\assets\\sass\\vendors\\_rfs.scss"
     },
     {
+      "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
       "Id": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
