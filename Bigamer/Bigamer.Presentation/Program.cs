@@ -1,7 +1,15 @@
+using Bigamer.Application.Extensions;
+using Bigamer.Infrastructure.Extensions;
+using Bigamer.Persistence.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddApplicationLayer()
+    .AddPersistenceLayer(builder.Configuration)
+    .AddInfrastructureLayer();
 
 var app = builder.Build();
 

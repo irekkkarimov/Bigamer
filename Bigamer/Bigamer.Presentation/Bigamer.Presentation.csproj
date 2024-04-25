@@ -5,24 +5,36 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>3d3b8974-b452-4b0f-b569-0487b96cfb71</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
 
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="wwwroot\fonts\" />
-        <Folder Include="wwwroot\images\" />
-        <Folder Include="wwwroot\js\" />
+        <Folder Include="wwwroot\fonts\"/>
+        <Folder Include="wwwroot\images\"/>
+        <Folder Include="wwwroot\js\"/>
+        <ProjectReference Include="..\Bigamer.Application\Bigamer.Application.csproj"/>
+        <ProjectReference Include="..\Bigamer.Domain\Bigamer.Domain.csproj"/>
+        <ProjectReference Include="..\Bigamer.Infrastructure\Bigamer.Infrastructure.csproj"/>
+        <ProjectReference Include="..\Bigamer.Persistence\Bigamer.Persistence.csproj"/>
     </ItemGroup>
 
 
-
-
-
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.18">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.18">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
 
 </Project>

@@ -1,0 +1,11 @@
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\bin\Debug\net7.0\Bigamer.Shared.deps.json
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\bin\Debug\net7.0\Bigamer.Shared.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\bin\Debug\net7.0\Bigamer.Shared.pdb
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\Bigamer.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\Bigamer.Shared.AssemblyInfoInputs.cache
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\Bigamer.Shared.AssemblyInfo.cs
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\Bigamer.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\Bigamer.Shared.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\refint\Bigamer.Shared.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\Bigamer.Shared.pdb
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Shared\obj\Debug\net7.0\ref\Bigamer.Shared.dll
