@@ -16,10 +16,6 @@ public class UserInfoConfiguration : IEntityTypeConfiguration<UserInfo>
             .WithOne(i => i.UserInfo)
             .HasForeignKey<UserInfo>(i => i.UserId);
 
-        builder.HasOne(i => i.Role)
-            .WithMany(i => i.UserInfos)
-            .HasForeignKey(i => i.RoleId);
-
         builder.HasOne(i => i.Team)
             .WithMany(i => i.UserInfos)
             .HasForeignKey(i => i.TeamId)

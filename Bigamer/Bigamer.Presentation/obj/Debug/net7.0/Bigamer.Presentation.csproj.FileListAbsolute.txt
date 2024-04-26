@@ -60,3 +60,4 @@ C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\De
 C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\System.Security.Permissions.dll

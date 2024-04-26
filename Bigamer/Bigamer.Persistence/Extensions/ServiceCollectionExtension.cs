@@ -1,4 +1,5 @@
 using Bigamer.Application.Interfaces;
+using Bigamer.Domain.Entities;
 using Bigamer.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -8,11 +9,17 @@ namespace Bigamer.Persistence.Extensions;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddPersistenceLayer(this IServiceCollection serviceCollection, IConfiguration configuration)
+    public static IServiceCollection AddPersistenceLayer(this IServiceCollection services, IConfiguration configuration)
     {
-        serviceCollection.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
+        services.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("POSTGRESQL_CONNECTION_STRING")));
 
-        return serviceCollection;
+        services.AddIdentity<User, Role>(options =>
+        {
+            options.SignIn.RequireConfirmedAccount = false;
+        })
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        return services;
     }
 }

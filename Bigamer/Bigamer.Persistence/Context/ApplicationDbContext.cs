@@ -1,11 +1,12 @@
 using System.Reflection;
 using Bigamer.Application.Interfaces;
 using Bigamer.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bigamer.Persistence.Context;
 
-public class ApplicationDbContext : DbContext, IApplicationDbContext
+public class ApplicationDbContext : IdentityDbContext<User, Role, Guid>, IApplicationDbContext
 {
     public ApplicationDbContext()
     {
@@ -28,10 +29,8 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
     
     public DbContext Context => this;
-    public DbSet<User> Users { get; set; } = null!;
     public DbSet<UserInfo> UserInfos { get; set; } = null!;
     public DbSet<Subscriber> Subscribers { get; set; } = null!;
-    public DbSet<Role> Roles { get; set; } = null!;
     public DbSet<Team> Teams { get; set; } = null!;
     public DbSet<TeamInfo> TeamInfos { get; set; } = null!;
     public DbSet<Game> Games { get; set; } = null!;
