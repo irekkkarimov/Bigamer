@@ -1,18 +1,17 @@
-@page
-@model Bigamer.Presentation.Views.Team.Index
+@model Bigamer.Application.DTOs.Team.Queries.TeamGetRequest.TeamGetResponse
 
 @{
     Layout = Layout;
 }
 
 <!-- ===========Banner Section start Here========== -->
-<section class="pageheader-section" style="background-image: url(./assets/images/pageheader/bg.jpg);">
+<section class="pageheader-section" style="background-image: url(../../assets/images/pageheader/bg.jpg);">
     <div class="container">
         <div class="section-wrapper text-center text-uppercase">
             <div class="pageheader-thumb mb-4">
-                <img src="~/assets/images/team/1.png" alt="team">
+                <img style="width: 220px;" src="../../@Model.ImageUrl" alt="team">
             </div>
-            <h2 class="pageheader-title">Dragon Details</h2>
+            <h2 class="pageheader-title">@Model.Name</h2>
         </div>
     </div>
 </section>
@@ -21,78 +20,85 @@
 <div class="about-team padding-top padding-bottom">
     <div class="container">
         <div class="section-header">
-            <p>DOTA 01</p>
+            <p>@Model.Game.Name</p>
             <h2 class="mb-3">ABOUT THE TEAM</h2>
-            <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam nisi earum, tempore tempora, dolores fugit voluptates aliquam sit aspernatur officia dicta, nostrum ipsam ipsa odio? Accusamus nulla itaque, tempore autem sunt blanditiis amet iure ipsa nemo ullam nihil, dicta quod fuga omnis quibusdam. Ea, autem sequi et aliquam cupiditate illum? Nemo, quis! Fugit illum, libero esse eaque placeat</p>
+            <p class="desc">@Model.About</p>
         </div>
         <ul class="d-flex flex-wrap justify-content-center player-meta mb-0">
             <li class="d-flex align-items-center">
                 <span class="left me-3">
                     <i class="icofont-medal"></i>
                 </span>
-                <span class="right"> 15 WINS </span>
+                <span class="right"> @Model.WinsCount WINS </span>
             </li>
             <li class="d-flex align-items-center">
                 <span class="left me-3">
                     <i class="icofont-signal"></i>
                 </span>
-                <span class="right">04 LOSES</span>
+                <span class="right">@Model.LosesCount LOSES</span>
             </li>
             <li class="d-flex align-items-center">
                 <span class="left me-3">
                     <i class="icofont-game"></i>
                 </span>
-                <span class="right">05 DRAWS</span>
+                <span class="right">@Model.DrawsCount DRAWS</span>
             </li>
             <li class="d-flex align-items-center">
                 <span class="left me-3">
                     <i class="icofont-workers-group"></i>
                 </span>
-                <span class="right">02 PLAYS</span>
+                <span class="right">@Model.GamesCount PLAYS</span>
             </li>
         </ul>
     </div>
 </div>
 
 <!-- ===========Player  Section start Here========== -->
-<div class="player-section padding-top padding-bottom bg-attachment" style="background-image:url(./assets/images/video/bg.jpg)">
+<div class="player-section padding-top padding-bottom bg-attachment" style="background-image:url(../../assets/images/video/bg.jpg)">
     <div class="container">
         <div class="section-header">
             <h2>TEAM Members</h2>
         </div>
         <div class="section-wrapper">
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="player-item">
-                        <div class="player-inner">
-                            <div class="player-thumb">
-                                <img src="https://img-cdn.hltv.org/playerbodyshot/F8-kMfRKbV5UDnMo4elY5J.png?ixlib=java-2.1.0&w=400&s=8b740a6d3e55871a8d773b298b486e8c" alt="player-img">
-                            </div>
-                            <div class="player-content text-center">
-                                <div class="player-info-list">
-                                    <h3 class="mb-0">Ilya "m0NESY" Osipov</h3>
+                @foreach (var player in Model.Players)
+                {
+                    var nicknameToShow = player.Nickname is null
+                        ? "" 
+                        : $" \"{player.Nickname}\" ";
+                    
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="player-item">
+                            <div class="player-inner">
+                                <div class="player-thumb">
+                                    <img src=@player.ImageUrl alt="player-img">
                                 </div>
-                                <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center w-100">
-                                    <li>
-                                        <a href="https://www.hltv.org/player/19230/m0nesy">
-                                            <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.hltv.org/player/19230/m0nesy">
-                                            <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.hltv.org/player/19230/m0nesy">
-                                            <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="player-content text-center">
+                                    <div class="player-info-list">
+                                        <h3 class="mb-0">@player.FirstName @nicknameToShow @player.LastName</h3>
+                                    </div>
+                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center w-100">
+                                        <li>
+                                            <a href="https://www.hltv.org/player/19230/m0nesy">
+                                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.hltv.org/player/19230/m0nesy">
+                                                <img src="~/assets/images/match/social-2.png" alt="youtube">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.hltv.org/player/19230/m0nesy">
+                                                <img src="~/assets/images/match/social-3.png" alt="twitch">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
                 <div class="col-lg-4 col-sm-6 col-12">
                     <div class="player-item">
                         <div class="player-inner">

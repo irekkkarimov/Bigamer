@@ -203,6 +203,9 @@ namespace Bigamer.Persistence.Migrations
                     b.Property<Guid>("TeamId")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("About")
+                        .HasColumnType("text");
+
                     b.Property<int>("DrawsCount")
                         .HasColumnType("integer");
 
@@ -221,6 +224,29 @@ namespace Bigamer.Persistence.Migrations
                     b.HasKey("TeamId");
 
                     b.ToTable("TeamInfos");
+                });
+
+            modelBuilder.Entity("Bigamer.Domain.Entities.TeamLink", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ServiceName")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("TeamId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("TeamLinks");
                 });
 
             modelBuilder.Entity("Bigamer.Domain.Entities.User", b =>
@@ -506,6 +532,17 @@ namespace Bigamer.Persistence.Migrations
                     b.Navigation("Team");
                 });
 
+            modelBuilder.Entity("Bigamer.Domain.Entities.TeamLink", b =>
+                {
+                    b.HasOne("Bigamer.Domain.Entities.Team", "Team")
+                        .WithMany("TeamLinks")
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("Bigamer.Domain.Entities.UserInfo", b =>
                 {
                     b.HasOne("Bigamer.Domain.Entities.Team", "Team")
@@ -597,6 +634,8 @@ namespace Bigamer.Persistence.Migrations
 
                     b.Navigation("TeamInfo")
                         .IsRequired();
+
+                    b.Navigation("TeamLinks");
 
                     b.Navigation("UserInfos");
                 });

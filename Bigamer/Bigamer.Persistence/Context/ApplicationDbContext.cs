@@ -37,4 +37,5 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, Guid>, IApplic
     public DbSet<Match> Matches { get; set; } = null!;
     public DbSet<MatchInfo> MatchInfos { get; set; } = null!;
     public DbSet<MatchLink> MatchLinks { get; set; } = null!;
+    public DbSet<TeamLink> TeamLinks { get; set; }
 }

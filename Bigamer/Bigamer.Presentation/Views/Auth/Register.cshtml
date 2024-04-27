@@ -1,5 +1,4 @@
-@page
-@model Bigamer.Presentation.Views.Auth.Register
+@model Bigamer.Application.DTOs.User.Commands.UserRegister.UserRegisterRequest
 
 @{
     Layout = Layout;
@@ -29,24 +28,49 @@
     <div class=" container">
         <div class="account-wrapper">
             <h3 class="title">Register Now</h3>
-            <form class="account-form">
+            <form asp-action="Register" method="post" class="account-form">
                 <div class="form-group">
-                    <input type="text" placeholder="First Name" name="Fname">
+                    <input
+                        type="text"
+                        placeholder="First Name"
+                        asp-for="FirstName"
+                        name="firstName"
+                        required>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Last Name" name="Lname">
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        asp-for="LastName"
+                        name="lastName"
+                        required>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Email" name="email">
+                    <input
+                        type="text"
+                        placeholder="Email"
+                        asp-for="Email"
+                        name="email"
+                        required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" name="password">
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        asp-for="Password"
+                        name="password"
+                        required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Confirm Password" name="password">
+                    <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        asp-for="ConfirmPassword"
+                        name="confirmPassword"
+                        required>
                 </div>
                 <div class="form-group">
-                    <button class="d-block default-button">
+                    <button type="submit" class="d-block default-button">
                         <span>Get Started Now</span>
                     </button>
                 </div>

@@ -15,5 +15,9 @@ public class TeamConfiguration : IEntityTypeConfiguration<Team>
         builder.HasMany(i => i.Matches)
             .WithMany(i => i.Teams)
             .UsingEntity<MatchTeam>();
+
+        builder.HasMany(i => i.TeamLinks)
+            .WithOne(i => i.Team)
+            .HasForeignKey(i => i.TeamId);
     }
 }

@@ -11,4 +11,5 @@ public class Team : BaseEntity
     public List<Match> Matches { get; set; } = new();
     public List<MatchTeam> MatchTeams { get; set; } = new();
     public List<UserInfo> UserInfos { get; set; } = new();
+    public List<TeamLink> TeamLinks { get; set; } = new();
 }

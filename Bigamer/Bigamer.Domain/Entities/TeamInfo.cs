@@ -11,4 +11,5 @@ public class TeamInfo : BaseEntity
     public int DrawsCount { get; set; }
     public int GamesCount { get; set; }
     public string? ImageUrl { get; set; }
+    public string? About { get; set; }
 }

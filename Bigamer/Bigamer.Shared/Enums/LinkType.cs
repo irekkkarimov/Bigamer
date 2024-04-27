@@ -1,6 +1,6 @@
 namespace Bigamer.Shared.Enums;
 
-public enum MatchLinkType
+public enum LinkType
 {
     Undefined,
     Hltv,

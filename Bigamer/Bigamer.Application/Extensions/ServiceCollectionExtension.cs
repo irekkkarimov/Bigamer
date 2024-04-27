@@ -1,11 +1,17 @@
+using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Bigamer.Application.Extensions;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddApplicationLayer(this IServiceCollection serviceCollection)
+    public static IServiceCollection AddApplicationLayer(this IServiceCollection services)
     {
-        return serviceCollection;
+        services.AddMediatR(config => 
+            config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+ 
+        return services;
     }
 }

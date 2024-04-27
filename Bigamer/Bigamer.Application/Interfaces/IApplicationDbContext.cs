@@ -15,4 +15,5 @@ public interface IApplicationDbContext : IDbContext
     DbSet<Match> Matches { get; set; }
     DbSet<MatchInfo> MatchInfos { get; set; }
     DbSet<MatchLink> MatchLinks { get; set; }
+    DbSet<TeamLink> TeamLinks { get; set; }
 }

@@ -14,9 +14,11 @@
                 transform: scale(1.1)
             }
         }
+
         .player-content {
             bottom: 30px;
         }
+
         .player-inner {
             &::after {
                 transform: translateY(0) scale(1);
@@ -32,6 +34,7 @@
     @extend %w-100;
     color: $white-color !important;
     @extend %hidden;
+
     &::after {
         @extend %abs;
         @extend %w-100;
@@ -67,6 +70,7 @@
     width: 100%;
     z-index: 1;
     @include transition($transition);
+
     .match-social-list {
         li {
             list-style: none;
@@ -96,9 +100,11 @@
                 transform: rotateY(360deg);
             }
         }
+
         .player-content-2 {
             @include transform(scale(1.1));
         }
+
         .player-inner-2 {
             &::after {
                 transform: translateY(0) scale(1);
@@ -115,6 +121,7 @@
 
 .player-thumb-2 {
     @extend %mb-30;
+
     img {
         @include transition(all .9s linear);
     }
@@ -141,11 +148,13 @@
         border: 1px solid rgba($white-color, $alpha: .1);
         @include border-radius(4px);
         margin: 5px;
+
         .left {
             i {
                 @include font-size($fs-h2);
             }
         }
+
         .right {
             font-family: $oswald;
             @extend %text-bold;

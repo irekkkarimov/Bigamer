@@ -1,12 +1,12 @@
-@page
-@model Bigamer.Presentation.Views.TeamList.Index
+
+@model Bigamer.Application.DTOs.Team.Queries.TeamGetAllRequest.TeamGetAllResponse
 
 @{
     Layout = Layout;
 }
 
 <!-- ===========Banner Section start Here========== -->
-<section class="pageheader-section" style="background-image: url(./assets/images/pageheader/bg.jpg);">
+<section class="pageheader-section" style="background-image: url(../assets/images/pageheader/bg.jpg);">
     <div class="container">
         <div class="section-wrapper text-center text-uppercase">
             <h2 class="pageheader-title">our team</h2>
@@ -29,41 +29,46 @@
 <div class="container">
 <div class="section-wrapper">
 <div class="row g-4 justify-content-center">
-    <div class="col-lg-4 col-sm-6 col-12">
-        <div class="player-item-2 text-center" style="background-image: url(./assets/images/team/1.jpg);">
-            <div class="player-inner-2">
-                <div class="player-thumb-2">
-                    <a asp-action="Index" asp-controller="Team">
-                        <img src="~/assets/images/team/1.png" alt="team-img">
-                    </a>
-                </div>
-                <div class="player-content-2">
-                    <a asp-controller="Team">
-                        <h2>Dragon Team</h2>
-                    </a>
-                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                        <li>
-                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                <img src="~/assets/images/match/social-2.png" alt="youtube">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                <img src="~/assets/images/match/social-3.png" alt="twitch">
-                            </a>
-                        </li>
-                    </ul>
+    @foreach (var team in Model.Teams)
+    {
+        <div class="col-lg-4 col-sm-6 col-12">
+            <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/2.jpg);">
+                <div class="player-inner-2">
+                    <div class="player-thumb-2">
+                        <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
+                            <img 
+                                style="height: 220px;"
+                                src="../../@team.ImageUrl" alt="team-img">
+                        </a>
+                    </div>
+                    <div class="player-content-2">
+                        <a asp-controller="Team">
+                            <h2>@team.Name</h2>
+                        </a>
+                        <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                            <li>
+                                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
+                                    <img src="~/assets/images/match/social-1.png" alt="vimeo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
+                                    <img src="~/assets/images/match/social-2.png" alt="youtube">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
+                                    <img src="~/assets/images/match/social-3.png" alt="twitch">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
     <div class="col-lg-4 col-sm-6 col-12">
-        <div class="player-item-2 text-center" style="background-image: url(./assets/images/team/2.jpg);">
+        <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/2.jpg);">
             <div class="player-inner-2">
                 <div class="player-thumb-2">
                     <a asp-controller="Team">
@@ -96,7 +101,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-sm-6 col-12">
-        <div class="player-item-2 text-center" style="background-image: url(./assets/images/team/3.jpg);">
+        <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/3.jpg);">
             <div class="player-inner-2">
                 <div class="player-thumb-2">
                     <a asp-controller="Team">
@@ -129,7 +134,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-sm-6 col-12">
-        <div class="player-item-2 text-center" style="background-image: url(./assets/images/team/4.jpg);">
+        <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/4.jpg);">
             <div class="player-inner-2">
                 <div class="player-thumb-2">
                     <a asp-controller="Team">
@@ -162,7 +167,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-sm-6 col-12">
-        <div class="player-item-2 text-center" style="background-image: url(./assets/images/team/5.jpg);">
+        <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/5.jpg);">
             <div class="player-inner-2">
                 <div class="player-thumb-2">
                     <a asp-controller="Team">
@@ -195,7 +200,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-sm-6 col-12">
-        <div class="player-item-2 text-center" style="background-image: url(./assets/images/team/1.jpg);">
+        <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/1.jpg);">
             <div class="player-inner-2">
                 <div class="player-thumb-2">
                     <a asp-controller="Team">
@@ -238,7 +243,7 @@
 <section class="cta-section padding-bottom">
     <div class="container">
         <div class="cta-wrapper item-layer">
-            <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0" style="background-image: url(./assets/images/cta/bg.jpg);">
+            <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0" style="background-image: url(../assets/images/cta/bg.jpg);">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="cta-content">

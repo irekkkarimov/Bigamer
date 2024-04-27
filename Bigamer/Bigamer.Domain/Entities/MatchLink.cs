@@ -7,6 +7,6 @@ public class MatchLink : BaseEntity
 {
     public Guid MatchId { get; set; }
     public Match Match { get; set; } = null!;
-    public MatchLinkType ServiceName { get; set; } = MatchLinkType.Undefined;
+    public LinkType ServiceName { get; set; } = LinkType.Undefined;
     public string Link { get; set; } = null!;
 }

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Bigamer.Domain.Entities
+@using System.Security.Claims
+@inject SignInManager<User> SignInManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -65,19 +70,30 @@
                                     <a asp-action="Index" asp-controller="Home" class="active">Home</a>
                                 </li>
                                 <li>
-                                    <a asp-action="Index" asp-controller="GameList" class="active">games</a>
+                                    <a asp-action="Index" asp-controller="MatchList" class="active">games</a>
                                 </li>
                                 <li>
                                     <a asp-action="Index" asp-controller="TeamList" class="active">teams</a>
                                 </li>
                             </ul>
-                            <div>
-                                <a asp-action="Login" asp-controller="Auth" class="login">
-                                    <i class="icofont-user"></i> <span>LOG IN</span>
-                                </a>
-                                <a asp-action="Register" asp-controller="Auth" class="signup">
-                                    <i class="icofont-users"></i> <span>SIGN UP</span>
-                                </a>
+                            <div style="display: flex; justify-content:center;">
+                                @if (!SignInManager.IsSignedIn(User))
+                                {
+                                    <a asp-action="Login" asp-controller="Auth" class="login">
+                                        <i class="icofont-user"></i> <span>LOG IN</span>
+                                    </a>
+                                    <a asp-action="Register" asp-controller="Auth" class="signup">
+                                        <i class="icofont-users"></i> <span>SIGN UP</span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <form asp-action="Logout" asp-controller="Auth">
+                                        <button class="login">
+                                            <i class="icofont-users"></i> <span>LOG OUT</span>
+                                        </button>
+                                    </form>
+                                }
                             </div>
 
                             <!-- toggle icons -->
@@ -93,7 +109,7 @@
 </header>
 @RenderBody()
 <footer class="footer-section">
-    <div class="footer-middle padding-top padding-bottom" style="background-image: url(../assets/images/footer/bg.jpg);">
+    <div class="footer-middle padding-top padding-bottom" style="background-image: url(../../assets/images/footer/bg.jpg);">
         <div class="container">
             <div class="row justify-content-sm-between padding-lg-top">
                 <div class="col-lg-4 col-md-6 col-12">
@@ -103,9 +119,11 @@
                                 <img src="~/assets/images/logo/logo.png" alt="logo">
                             </div>
                             <div class="fm-item-content">
-                                <p class="mb-4">Upropriate brand economca sound technolog after
+                                <p class="mb-4">
+                                    Upropriate brand economca sound technolog after
                                     covalent technology enable prospective wastng markets whereas
-                                    propriate and brand economca sound technolog</p>
+                                    propriate and brand economca sound technolog
+                                </p>
                             </div>
                         </div>
                     </div>

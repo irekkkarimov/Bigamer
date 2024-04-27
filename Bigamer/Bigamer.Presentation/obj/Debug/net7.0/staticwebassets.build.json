@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5Jt4cvdtTYK0LJpSRbHcV6x7LOZAWPB07bjaIDclplc=",
+  "Hash": "iHnEYLzON97BN3LIKL1hT2L2+P0IrS3iiTguoq1XXak=",
   "Source": "Bigamer.Presentation",
   "BasePath": "_content/Bigamer.Presentation",
   "Mode": "Default",
@@ -3109,6 +3109,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\team\\5.png"
+    },
+    {
+      "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\pngfind.com-csgo-knife-png-75343.png",
+      "SourceId": "Bigamer.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bigamer.Presentation",
+      "RelativePath": "assets/images/team/pngfind.com-csgo-knife-png-75343.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\team\\pngfind.com-csgo-knife-png-75343.png"
     },
     {
       "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\01.jpg",
