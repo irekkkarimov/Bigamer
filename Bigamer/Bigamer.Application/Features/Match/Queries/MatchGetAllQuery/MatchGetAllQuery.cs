@@ -5,5 +5,10 @@ namespace Bigamer.Application.Features.Match.Queries.MatchGetAllQuery;
 
 public class MatchGetAllQuery : IRequest<MatchGetAllResponse>
 {
-    
+    public MatchGetAllQuery(MatchGetAllRequest request)
+    {
+        Props = request;
+    }
+
+    public MatchGetAllRequest Props { get; set; }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ASLaW9rfjhEJ2yz2Oycm+pNSMClaitq04FlJuf2LiHQ=",
+  "Hash": "b7d7jtpLUr7PMvJ9xNGmyHDiAYrQ13GOS6h+I4Dx094=",
   "Source": "Bigamer.Presentation",
   "BasePath": "_content/Bigamer.Presentation",
   "Mode": "Default",
@@ -627,6 +627,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\banner\\bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\cat_img.png",
+      "SourceId": "Bigamer.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bigamer.Presentation",
+      "RelativePath": "assets/images/banner/cat_img.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\banner\\cat_img.png"
     },
     {
       "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\banner\\vs.png",

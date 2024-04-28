@@ -1,8 +1,25 @@
-@page
-@model Bigamer.Presentation.Views.GameList.Index
+@using Bigamer.Shared.Enums
+@model Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest.MatchGetAllResponse
 
 @{
     Layout = Layout;
+
+    Func<int, string> monthByNumber = x => x switch 
+    {
+        1 => "January",
+        2 => "February",
+        3 => "March",
+        4 => "April",
+        5 => "May",
+        6 => "June",
+        7 => "July",
+        8 => "August",
+        9 => "September",
+        10 => "October",
+        11 => "November",
+        12 => "December",
+        _ => ""
+        };
 }
 
 <!-- preloader start here -->
@@ -28,7 +45,7 @@
 
 
 <!-- ===========PageHeader Section Start Here========== -->
-<section class="pageheader-section" style="background-image: url(./assets/images/pageheader/bg.jpg);">
+<section class="pageheader-section" style="background-image: url(../../assets/images/pageheader/bg.jpg);">
     <div class="container">
         <div class="section-wrapper text-center text-uppercase">
             <h2 class="pageheader-title">most popular game</h2>
@@ -51,89 +68,139 @@
 <div class="container">
 <div class="section-wrapper">
 <ul class="match-filter-button-group common-filter-button-group d-flex flex-wrap justify-content-center mb-5 text-uppercase">
-    <li class="is-checked" data-filter="*">All matches</li>
-    <li data-filter=".match-one">today’s matches</li>
-    <li data-filter=".match-two">upcoming matches</li>
-    <li data-filter=".match-three">matches results</li>
+    <a asp-action="Index" asp-route-filter="All"><li class="@(Model.Filter == MatchListFilter.All ? "is-checked" : "")">All matches</li></a>
+    <a asp-action="Index" asp-route-filter="Today"><li class="@(Model.Filter == MatchListFilter.Today ? "is-checked" : "")">today’s matches</li></a>
+    <a asp-action="Index" asp-route-filter="Upcoming"><li class="@(Model.Filter == MatchListFilter.Upcoming ? "is-checked" : "")">upcoming matches</li></a>
+    <a asp-action="Index" asp-route-filter="Results"><li class="@(Model.Filter == MatchListFilter.Results ? "is-checked" : "")">matches results</li></a>
 </ul>
 <div class="row g-4 match-grid">
-<div class="col-12 matchlistitem match-one">
-    <div class="match-item item-layer">
-        <div class="match-inner">
-            <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-yellow">
-                <div class="row gy-4 align-items-center justify-content-center">
-                    <div class="col-xl-4 col-md-6 order-md-2">
-                        <div class="match-game-team">
-                            <ul class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li class="match-team-thumb">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/match/teamsm/teamsm-10.png" alt="team-img">
-                                    </a>
-                                </li>
-                                <li class="text-center">
-                                    <img class="w-75 w-md-100" src="~/assets/images/match/vs.png" alt="vs">
-                                </li>
-                                <li class="match-team-thumb">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/match/teamsm/teamsm-1.png" alt="team-img">
-                                    </a>
-                                </li>
-                            </ul>
+@foreach (var match in Model.Matches)
+{
+    var dateToShow = match.StartDate is null
+        ? ""
+        : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
+
+    var timeToShow = match.StartDate is null
+        ? ""
+        : $"{match.StartDate.Value.Hour}:{match.StartDate.Value.Minute}";
+
+    var dayTime = match.StartDate is null
+        ? ""
+        : match.StartDate.Value.Hour > 11 ? "PM" : "AM";
+    
+    <div class="col-12 matchlistitem match-two">
+        <div class="match-item item-layer">
+            <div class="match-inner">
+                <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
+                    <p class="match-team-info">
+                        2 group
+                        <span class="fw-bold">
+                            @match.Teams.Count
+                            Teams
+                        </span>
+                    </p>
+                    <p class="match-prize">
+                        Prize Pool
+                        <span class="fw-bold">
+                            $@match.Prize
+                        </span >
+                    </p>
+                </div>
+                <div class="match-content gradient-bg-pink">
+                    <div class="row gy-4 align-items-center justify-content-center">
+                        <div class="col-xl-4 col-md-6 order-md-2">
+                            <div class="match-game-team">
+                                <ul class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
+                                    <li class="match-team-thumb">
+                                        <a
+                                            asp-action="Index"
+                                            asp-route-teamId="@match.Teams[0].TeamId"
+                                            asp-controller="Team">
+                                            <img style="height: 86px;" src="@match.Teams[0].ImageUrl"
+                                                 alt="team-img">
+                                        </a>
+                                    </li >
+                                    <l class="text-center">
+                                        <img
+                                            class="w-75 w-md-100"
+                                            src="~/assets/images/match/vs.png"
+                                            alt="vs">
+                                    </l>
+                                    <li class="match-team-thumb">
+                                        <a
+                                            asp-action="Index"
+                                            asp-route-teamId="@match.Teams[1].TeamId"
+                                            asp-controller="Team">
+                                            <img style="height: 86px;" src="../../@match.Teams[1].ImageUrl"
+                                                 alt="team-img">
+                                        </a>
+                                    </li >
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 order-md-1">
-                        <div class="match-game-info">
-                            <h4>
-                                <a href="#">Battlefield-4 tournament</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center  justify-content-md-start">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span><span class="match-time">Time: 08:30PM</span>
-                            </p>
+                        <div class="col-xl-4 col-md-6 order-md-1">
+                            <div class="match-game-info">
+                                <h4>
+                                    <a href="#">
+                                        @match.GameName
+                                        tournament
+                                    </a>
+                                </h4>
+                                <p class="d-flex flex-wrap justify-content-center  justify-content-md-start">
+                                    <span class="match-date">
+                                        @dateToShow
+                                    </span >
+                                    <span class="match-time">
+                                        Time: @timeToShow @dayTime
+                                    </span >
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 order-md-3">
-                        <div class="match-game-social">
-                            <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center justify-content-xl-start">
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier" class="default-button reverse-effect">
+                        <div class="col-xl-4 col-md-6 order-md-3">
+                            <div class="match-game-social">
+                                <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center justify-content-xl-start">
+                                    @foreach (var link in match.Links)
+                                    {
+                                        string linkImage;
+                                        switch (link.ServiceName)
+                                        {
+                                            case LinkType.Undefined:
+                                            case LinkType.Hltv:
+                                                linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                break;
+                                            case LinkType.Yt:
+                                                linkImage = "../assets/images/match/social-2.png";
+                                                break;
+                                            case LinkType.Twitch:
+                                                linkImage = "../assets/images/match/social-3.png";
+                                                break;
+                                            default:
+                                                throw new ArgumentOutOfRangeException();
+                                        }
+
+                                        <li>
+                                            <a href="@link.Link">
+                                                <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
+                                            </a>
+                                        </li>
+                                    }
+                                    <a href="@match.Links[0].Link"
+                                       class="default-button reverse-effect">
                                         <span>
-                                            Watch
-                                            Now <i class="icofont-play-alt-1"></i>
+                                            Watch Now
+                                            <i class="icofont-play-alt-1">
+                                            </i>
                                         </span>
                                     </a>
-                                </li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
 <div class="col-12 matchlistitem match-two">
     <div class="match-item item-layer">
         <div class="match-inner">
