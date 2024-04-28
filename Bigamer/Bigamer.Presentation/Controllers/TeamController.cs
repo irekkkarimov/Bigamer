@@ -1,7 +1,7 @@
-using Bigamer.Application.DTOs.Team.Commands;
-using Bigamer.Application.DTOs.Team.Commands.TeamAddPlayerRequest;
-using Bigamer.Application.DTOs.Team.Commands.TeamAddRequest;
-using Bigamer.Application.DTOs.Team.Queries.TeamGetRequest;
+using Bigamer.Application.Requests.Team.Commands;
+using Bigamer.Application.Requests.Team.Commands.TeamAddPlayerRequest;
+using Bigamer.Application.Requests.Team.Commands.TeamAddRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetRequest;
 using Bigamer.Application.Features.Team.Commands.TeamAddCommand;
 using Bigamer.Application.Features.Team.Commands.TeamAddLinkCommand;
 using Bigamer.Application.Features.Team.Commands.TeamAddPlayerCommand;

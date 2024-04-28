@@ -1,4 +1,4 @@
-using Bigamer.Application.DTOs.Game.Commands.GameAddRequest;
+using Bigamer.Application.Requests.Game.Commands.GameAddRequest;
 using Bigamer.Application.Features.Game.Commands.GameAddCommand;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

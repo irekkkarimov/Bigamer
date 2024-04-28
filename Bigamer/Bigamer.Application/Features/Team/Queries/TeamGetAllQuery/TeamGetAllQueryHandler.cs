@@ -1,5 +1,5 @@
 using AutoMapper;
-using Bigamer.Application.DTOs.Team.Queries.TeamGetAllRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest;
 using Bigamer.Application.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -21,8 +21,11 @@ public class TeamGetAllQueryHandler : IRequestHandler<TeamGetAllQuery, TeamGetAl
     {
         var teamsFromDb = await _dbContext.Teams
             .Include(i => i.TeamInfo)
+            .Include(i => i.TeamLinks)
             .ToListAsync(cancellationToken);
 
+        Console.WriteLine(teamsFromDb[0].TeamLinks.Count);
+        
         var result = new TeamGetAllResponse();
         
         foreach (var team in teamsFromDb)

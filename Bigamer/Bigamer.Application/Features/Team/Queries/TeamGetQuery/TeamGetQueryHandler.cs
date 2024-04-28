@@ -1,5 +1,5 @@
 using AutoMapper;
-using Bigamer.Application.DTOs.Team.Queries.TeamGetRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetRequest;
 using Bigamer.Application.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

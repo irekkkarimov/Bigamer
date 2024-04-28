@@ -1,4 +1,4 @@
-using Bigamer.Application.DTOs.Team.Queries.TeamGetRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetRequest;
 using MediatR;
 
 namespace Bigamer.Application.Features.Team.Queries.TeamGetQuery;

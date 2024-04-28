@@ -1,5 +1,6 @@
 
-@model Bigamer.Application.DTOs.Team.Queries.TeamGetAllRequest.TeamGetAllResponse
+@using Bigamer.Shared.Enums
+@model Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest.TeamGetAllResponse
 
 @{
     Layout = Layout;
@@ -42,25 +43,36 @@
                         </a>
                     </div>
                     <div class="player-content-2">
-                        <a asp-controller="Team">
+                        <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
                             <h2>@team.Name</h2>
                         </a>
                         <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                            <li>
-                                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                    <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                    <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                    <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                </a>
-                            </li>
+                            @foreach (var link in team.Links)
+                            {
+
+                                string linkImage;
+                                switch (link.ServiceName)
+                                {
+                                    case LinkType.Undefined:
+                                    case LinkType.Hltv:
+                                        linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                        break;
+                                    case LinkType.Yt:
+                                        linkImage = "../assets/images/match/social-2.png";
+                                        break;
+                                    case LinkType.Twitch:
+                                        linkImage = "../assets/images/match/social-3.png";
+                                        break;
+                                    default:
+                                        throw new ArgumentOutOfRangeException();
+                                }
+                                
+                                <li>
+                                    <a href="@link.Link">
+                                        <img style="height: 50px;" src=@linkImage alt="@link.ServiceName">
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>

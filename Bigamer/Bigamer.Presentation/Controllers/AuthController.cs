@@ -1,5 +1,5 @@
-using Bigamer.Application.DTOs.User.Commands.UserLogin;
-using Bigamer.Application.DTOs.User.Commands.UserRegister;
+using Bigamer.Application.Requests.User.Commands.UserLogin;
+using Bigamer.Application.Requests.User.Commands.UserRegister;
 using Bigamer.Application.Features.User.Commands.UserLoginCommand;
 using Bigamer.Application.Features.User.Commands.UserLogoutCommand;
 using Bigamer.Application.Features.User.Commands.UserRegisterCommand;

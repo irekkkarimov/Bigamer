@@ -1,4 +1,4 @@
-using Bigamer.Application.DTOs.User.Commands.UserRegister;
+using Bigamer.Application.Requests.User.Commands.UserRegister;
 using MediatR;
 
 namespace Bigamer.Application.Features.User.Commands.UserRegisterCommand;

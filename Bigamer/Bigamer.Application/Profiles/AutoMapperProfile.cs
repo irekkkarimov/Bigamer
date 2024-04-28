@@ -1,7 +1,11 @@
 using AutoMapper;
-using Bigamer.Application.DTOs.Team.Queries.TeamGetAllRequest;
-using Bigamer.Application.DTOs.Team.Queries.TeamGetRequest;
+using Bigamer.Application.DTOs.Links;
+using Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
+using Bigamer.Application.Requests.Match.Queries.MatchGetRandomActiveRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetRequest;
 using Bigamer.Domain.Entities;
+using Bigamer.Shared.Enums;
 
 namespace Bigamer.Application.Profiles;
 
@@ -9,6 +13,7 @@ public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
+        // TEAM GET ALL
         CreateMap<Team, TeamGetAllResponseItem>()
             .ForMember(i => i.TeamId,
                 i =>
@@ -18,8 +23,13 @@ public class AutoMapperProfile : Profile
                     i.MapFrom(e => e.Name))
             .ForMember(i => i.ImageUrl,
                 i =>
-                    i.MapFrom(e => e.TeamInfo.ImageUrl));
+                    i.MapFrom(e => e.TeamInfo.ImageUrl))
+            .ForMember(i => i.Links,
+                i =>
+                    i.MapFrom(e => e.TeamLinks));
 
+        
+        // TEAM GET SINGLE
         CreateMap<Team, TeamGetResponse>()
             .ForMember(i => i.Name,
                 i =>
@@ -67,5 +77,51 @@ public class AutoMapperProfile : Profile
             .ForMember(i => i.Name,
                 i =>
                     i.MapFrom(e => e.Name));
+
+        CreateMap<TeamLink, GetLink>()
+            .ForMember(i => i.Link,
+                i =>
+                    i.MapFrom(e => e.Link))
+            .ForMember(i => i.ServiceName,
+                i =>
+                    i.MapFrom(e => e.ServiceName));
+
+
+        // MATCH GET ALL
+        CreateMap<Match, MatchGetAllResponseItem>()
+            .ForMember(i => i.GameName,
+                i =>
+                    i.MapFrom(e => e.Game.Name))
+            .ForMember(i => i.StartDate,
+                i =>
+                    i.MapFrom(e => e.StartDate))
+            .ForMember(i => i.FinishDate,
+                i =>
+                    i.MapFrom(e => e.FinishDate))
+            .ForMember(i => i.Prize,
+                i =>
+                    i.MapFrom(e => e.MatchInfo.Prize))
+            .ForMember(i => i.Teams,
+                i =>
+                    i.MapFrom(e => e.Teams))
+            .ForMember(i => i.Links,
+                i =>
+                    i.MapFrom(e => e.MatchLinks));
+
+        CreateMap<MatchLink, GetLink>()
+            .ForMember(i => i.ServiceName,
+                i =>
+                    i.MapFrom(e => e.ServiceName))
+            .ForMember(i => i.Link,
+                i =>
+                    i.MapFrom(e => e.Link));
+
+        CreateMap<Team, MatchGetAllResponseTeam>()
+            .ForMember(i => i.TeamId,
+                i =>
+                    i.MapFrom(e => e.Id))
+            .ForMember(i => i.ImageUrl,
+                i =>
+                    i.MapFrom(e => e.TeamInfo.ImageUrl));
     }
 }

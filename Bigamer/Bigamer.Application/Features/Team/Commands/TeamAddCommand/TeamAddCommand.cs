@@ -1,4 +1,4 @@
-using Bigamer.Application.DTOs.Team.Commands.TeamAddRequest;
+using Bigamer.Application.Requests.Team.Commands.TeamAddRequest;
 using MediatR;
 
 namespace Bigamer.Application.Features.Team.Commands.TeamAddCommand;

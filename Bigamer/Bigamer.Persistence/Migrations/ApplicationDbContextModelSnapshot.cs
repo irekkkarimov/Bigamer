@@ -43,18 +43,14 @@ namespace Bigamer.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("FinishDate")
+                    b.Property<DateTime?>("FinishDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("GameId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime?>("StartDate")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -71,10 +67,10 @@ namespace Bigamer.Persistence.Migrations
                     b.Property<string>("Other")
                         .HasColumnType("text");
 
-                    b.Property<double>("Prize")
+                    b.Property<double?>("Prize")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("Stage")
+                    b.Property<double?>("Stage")
                         .HasColumnType("double precision");
 
                     b.HasKey("MatchId");

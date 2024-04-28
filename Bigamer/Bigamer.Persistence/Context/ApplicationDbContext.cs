@@ -20,6 +20,7 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, Guid>, IApplic
     {
         base.OnConfiguring(optionsBuilder);
         optionsBuilder.UseNpgsql();
+        optionsBuilder.EnableSensitiveDataLogging();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

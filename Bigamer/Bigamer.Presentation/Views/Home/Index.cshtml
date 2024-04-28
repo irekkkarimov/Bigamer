@@ -1,5 +1,25 @@
-﻿@{
+﻿@using Bigamer.Shared.Enums
+@model Bigamer.Application.DTOs.Home.GetInfo.GetHomePageInfoDto
+
+@{
     ViewData["Title"] = "Home Page";
+
+    Func<int, string> monthByNumber = x => x switch 
+    {
+        1 => "January",
+        2 => "February",
+        3 => "March",
+        4 => "April",
+        5 => "May",
+        6 => "June",
+        7 => "July",
+        8 => "August",
+        9 => "September",
+        10 => "October",
+        11 => "November",
+        12 => "December",
+        _ => ""
+        };
 }
 
 <!-- preloader start here -->
@@ -26,35 +46,53 @@
 <!-- ==========shape image end Here========== -->
 
 <!-- ===========Banner Section start Here========== -->
-<section class="banner-section" style="background-image: url(assets/images/banner/bg.jpg);">
-    <div class="container">
-        <div class="">
-            <div class="banner-content text-center">
-                <h4 class="fw-normal theme-color mb-4">TODAY BIG MATCHES</h4>
-                <img src="~/assets/images/banner/01.png" alt="banner text thumb" class="mb-4">
-                <p>Time : 08:30Pm - 30 December 2021</p>
-                <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier" class="default-button reverse-effect" data-rel="lightcase">
-                    <span>Watch Now <i class="icofont-play-alt-1"></i></span>
-                </a>
-            </div>
-            <div class="banner-thumb d-flex flex-wrap justify-content-center justify-content-between align-items-center align-items-lg-end">
-                <div class="banner-thumb-img ml-xl-50-none">
-                    <a asp-controller="Team">
-                        <img src="~/assets/images/banner/02.png" alt="banner-thumb">
-                    </a>
+@if (Model.TodayMatch is not null)
+{
+    var dateToShow = Model.TodayMatch.StartDate is null
+        ? ""
+        : $"{Model.TodayMatch.StartDate.Value.Day} {monthByNumber(Model.TodayMatch.StartDate.Value.Month)} - {Model.TodayMatch.StartDate.Value.Year}";
+
+    var timeToShow = Model.TodayMatch.StartDate is null
+        ? ""
+        : $"{Model.TodayMatch.StartDate.Value.Hour}:{Model.TodayMatch.StartDate.Value.Minute}";
+
+    var dayTime = Model.TodayMatch.StartDate is null
+        ? ""
+        : Model.TodayMatch.StartDate.Value.Hour > 11 ? "PM" : "AM";
+
+    <section class="banner-section" style="background-image: url(../../assets/images/banner/bg.jpg);">
+        <div class="container">
+            <div class="">
+                <div class="banner-content text-center">
+                    <h4 class="fw-normal theme-color mb-4">TODAY BIG MATCH</h4>
+                    <h2>@Model.TodayMatch.GameName</h2>
+                    <p>Time : @timeToShow @dayTime - @dateToShow</p>
+                    @if (Model.TodayMatch.WatchLink is not null && Model.TodayMatch.WatchLink != "")
+                    {
+                        <a href="https://www.youtube.com/embed/wNyhnEugTgQ" class="default-button reverse-effect" data-rel="lightcase">
+                            <span>Watch Now <i class="icofont-play-alt-1"></i></span>
+                        </a>
+                    }
                 </div>
-                <div class="banner-thumb-vs">
-                    <img src="~/assets/images/banner/vs.png" alt="banner-thumb">
-                </div>
-                <div class="banner-thumb-img mr-xl-50-none">
-                    <a asp-controller="Team">
-                        <img src="~/assets/images/banner/03.png" alt="banner-thumb">
-                    </a>
+                <div class="banner-thumb d-flex flex-wrap justify-content-center justify-content-between align-items-center align-items-lg-end">
+                    <div class="banner-thumb-img ml-xl-50-none">
+                        <a asp-action="Index" asp-route-teamId="@Model.TodayMatch.Teams[0].TeamId" asp-controller="Team">
+                            <img style="width: 304px; height: 324px;" src="../../@Model.TodayMatch.Teams[0].ImageUrl" alt="First team">
+                        </a>
+                    </div>
+                    <div class="banner-thumb-vs">
+                        <img src="~/assets/images/banner/vs.png" alt="banner-thumb">
+                    </div>
+                    <div class="banner-thumb-img mr-xl-50-none">
+                        <a asp-action="Index" asp-route-teamId=" @Model.TodayMatch.Teams[1].TeamId" asp-controller="Team">
+                            <img style="width: 304px; height: 324px;" src="@Model.TodayMatch.Teams[1].ImageUrl" alt="Second team">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}
 <!-- ===========Banner Section Ends Here========== -->
 
 
@@ -279,7 +317,7 @@
 
 
 <!-- ===========match schedule Section start Here========== -->
-<section class="match-section padding-top padding-bottom" style="background-image:url(assets/images/match/bg.jpg)">
+<section class="match-section padding-top padding-bottom" style="background-image:url(../../assets/images/match/bg.jpg)">
 <div class="container">
 <div class="section-header">
     <p>Anywhere, Anytime</p>
@@ -287,86 +325,140 @@
 </div>
 <div class="section-wrapper">
 <div class="row mb-5">
-    <div class="col-12">
-        <div class="match-item item-layer">
-            <div class="match-inner">
-                <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                    <p class="match-team-info">
-                        2 group <span class="fw-bold">32 Players</span>
-                    </p>
-                    <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-                </div>
-                <div class="match-content gradient-bg-yellow">
-                    <div class="row gy-4 align-items-center justify-content-center">
-                        <div class="col-xl-4 col-md-6 order-md-2">
-                            <div class="match-game-team">
-                                <ul
-                                    class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
-                                    <li class="match-team-thumb">
-                                        <a asp-controller="Team">
-                                            <img src="~/assets/images/match/team-1.png" alt="team-img">
+    @foreach (var match in Model.MatchesInfo.Matches)
+    {
+        var dateToShow = match.StartDate is null
+            ? ""
+            : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
+
+        var timeToShow = match.StartDate is null
+            ? ""
+            : $"{match.StartDate.Value.Hour}:{match.StartDate.Value.Minute}";
+
+        var dayTime = match.StartDate is null
+            ? ""
+            : match.StartDate.Value.Hour > 11 ? "PM" : "AM";
+
+        <div class="col-12">
+            <div class="match-item item-layer">
+                <div class="match-inner">
+                    <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
+                        <p class="match-team-info">
+                            2 group
+                            <span class="fw-bold">
+                                @match.Teams.Count
+                                Teams
+                            </span>
+                        </p>
+                        <p class="match-prize">
+                            Prize Pool
+                            <span class="fw-bold">
+                                $@match.Prize
+                            </span >
+                        </p>
+                    </div >
+                    <div
+                        class=
+                        "match-content gradient-bg-yellow">
+                        <div class="row gy-4 align-items-center justify-content-center">
+                            <div class="col-xl-4 col-md-6 order-md-2">
+                                <div class="match-game-team">
+                                    <ul class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
+                                        <li class="match-team-thumb">
+                                            <a
+                                                asp-action="Index"
+                                                asp-route-teamId="@match.Teams[0].TeamId"
+                                                asp-controller="Team">
+                                                <img style="height: 86px;" src="@match.Teams[0].ImageUrl"
+                                                     alt="team-img">
+                                            </a>
+                                        </li >
+                                        <l class="text-center">
+                                            <img
+                                                class="w-75 w-md-100"
+                                                src="~/assets/images/match/vs.png"
+                                                alt="vs">
+                                        </l>
+                                        <li class="match-team-thumb">
+                                            <a
+                                                asp-action="Index"
+                                                asp-route-teamId="@match.Teams[1].TeamId"
+                                                asp-controller="Team">
+                                                <img style="height: 86px;" src="@match.Teams[1].ImageUrl"
+                                                     alt="team-img">
+                                            </a>
+                                        </li >
+                                    </ul >
+                                </div >
+                            </div >
+                            <div
+                                class=
+                                "col-xl-4 col-md-6 order-md-1">
+                                <div class="match-game-info">
+                                    <h4>
+                                        <a href="#">
+                                            @match.GameName
+                                            tournament
                                         </a>
-                                    </li>
-                                    <li class="text-center">
-                                        <img class="w-75 w-md-100" src="~/assets/images/match/vs.png" alt="vs">
-                                    </li>
-                                    <li class="match-team-thumb">
-                                        <a asp-controller="Team">
-                                            <img src="~/assets/images/match/team-2.png" alt="team-img">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6 order-md-1">
-                            <div class="match-game-info">
-                                <h4>
-                                    <a href="#">Battlefield-4 tournament</a>
-                                </h4>
-                                <p
-                                    class="d-flex flex-wrap justify-content-center  justify-content-md-start">
-                                    <span class="match-date">
-                                        30
-                                        April 2021
-                                    </span><span class="match-time">Time: 08:30PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6 order-md-3">
-                            <div class="match-game-social">
-                                <ul
-                                    class="match-social-list d-flex flex-wrap align-items-center justify-content-center justify-content-xl-start">
-                                    <li>
-                                        <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                            <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                            <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                            <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier" class="default-button reverse-effect">
+                                    </h4>
+                                    <p class="d-flex flex-wrap justify-content-center  justify-content-md-start">
+                                        <span class="match-date">
+                                            @dateToShow
+                                        </span >
+                                        <span class="match-time">
+                                            Time: @timeToShow @dayTime
+                                        </span >
+                                    </p >
+                                </div >
+                            </div >
+                            <div
+                                class="col-xl-4 col-md-6 order-md-3">
+                                <div
+                                    class="match-game-social">
+                                    <ul
+                                        class="match-social-list d-flex flex-wrap align-items-center justify-content-center justify-content-xl-start">
+                                        @foreach (var link in match.Links)
+                                        {
+                                            string linkImage;
+                                            switch (link.ServiceName)
+                                            {
+                                                case LinkType.Undefined:
+                                                case LinkType.Hltv:
+                                                    linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                    break;
+                                                case LinkType.Yt:
+                                                    linkImage = "../assets/images/match/social-2.png";
+                                                    break;
+                                                case LinkType.Twitch:
+                                                    linkImage = "../assets/images/match/social-3.png";
+                                                    break;
+                                                default:
+                                                    throw new ArgumentOutOfRangeException();
+                                            }
+
+                                            <li>
+                                                <a href="@link.Link">
+                                                    <img style="height: 50px;" src=@linkImage alt="@link.ServiceName">
+                                                </a>
+                                            </li>
+                                        }
+                                        <a href="@match.Links[0].Link"
+                                           class="default-button reverse-effect">
                                             <span>
-                                                Watch
-                                                Now <i class="icofont-play-alt-1"></i>
+                                                Watch Now
+                                                <i class="icofont-play-alt-1">
+                                                </i>
                                             </span>
                                         </a>
-                                    </li>
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 <div class="row g-5">
 <div class="col-lg-6">
@@ -857,41 +949,56 @@
         <div class="section-wrapper">
             <div class="player-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(assets/images/team/1.jpg);">
-                            <div class="player-inner-2">
-                                <div class="player-thumb-2">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/team/1.png" alt="team-img">
-                                    </a>
-                                </div>
-                                <div class="player-content-2">
-                                    <a asp-controller="Team">
-                                        <h2>Dragon Team</h2>
-                                    </a>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                            </a>
-                                        </li>
-                                    </ul>
+                    @foreach (var team in Model.TeamsInfo.Teams)
+                    {
+                        <div class="swiper-slide">
+                            <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/1.jpg);">
+                                <div class="player-inner-2">
+                                    <div class="player-thumb-2">
+                                        <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
+                                            <img
+                                                style="height: 220px;"
+                                                src="../../@team.ImageUrl" alt="team-img">
+                                        </a>
+                                    </div>
+                                    <div class="player-content-2">
+                                        <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
+                                            <h2>@team.Name</h2>
+                                        </a>
+                                        <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                                            @foreach (var link in team.Links)
+                                            {
+                                                string linkImage;
+                                                switch (link.ServiceName)
+                                                {
+                                                    case LinkType.Undefined:
+                                                    case LinkType.Hltv:
+                                                        linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                        break;
+                                                    case LinkType.Yt:
+                                                        linkImage = "../assets/images/match/social-2.png";
+                                                        break;
+                                                    case LinkType.Twitch:
+                                                        linkImage = "../assets/images/match/social-3.png";
+                                                        break;
+                                                    default:
+                                                        throw new ArgumentOutOfRangeException();
+                                                }
+
+                                                <li>
+                                                    <a href="@link.Link">
+                                                        <img style="height: 50px;" src=@linkImage alt="@link.ServiceName">
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                     <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(assets/images/team/2.jpg);">
+                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/2.jpg);">
                             <div class="player-inner-2">
                                 <div class="player-thumb-2">
                                     <a asp-controller="Team">
@@ -924,7 +1031,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(assets/images/team/3.jpg);">
+                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/3.jpg);">
                             <div class="player-inner-2">
                                 <div class="player-thumb-2">
                                     <a asp-controller="Team">
@@ -957,7 +1064,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(assets/images/team/4.jpg);">
+                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/4.jpg);">
                             <div class="player-inner-2">
                                 <div class="player-thumb-2">
                                     <a asp-controller="Team">
@@ -990,7 +1097,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(assets/images/team/5.jpg);">
+                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/5.jpg);">
                             <div class="player-inner-2">
                                 <div class="player-thumb-2">
                                     <a asp-controller="Team">
@@ -1034,7 +1141,7 @@
 <section class="cta-section padding-bottom">
     <div class="container">
         <div class="cta-wrapper item-layer">
-            <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0" style="background-image: url(assets/images/cta/bg.jpg);">
+            <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0" style="background-image: url(../../assets/images/cta/bg.jpg);">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="cta-content">
@@ -1063,4 +1170,3 @@
         </div>
     </div>
 </section>
-<!-- ===========CTA Section Ends Here========== -->

@@ -1,4 +1,4 @@
-using Bigamer.Application.DTOs.Team.Commands.TeamAddPlayerRequest;
+using Bigamer.Application.Requests.Team.Commands.TeamAddPlayerRequest;
 using MediatR;
 
 namespace Bigamer.Application.Features.Team.Commands.TeamAddPlayerCommand;
