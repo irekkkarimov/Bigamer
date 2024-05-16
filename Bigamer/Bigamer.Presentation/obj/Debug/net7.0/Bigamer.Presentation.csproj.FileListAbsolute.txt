@@ -66,3 +66,9 @@ C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\De
 C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\obj\Debug\net7.0\Bigamer.Presentation.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\MailKit.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\MimeKit.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\System.Formats.Asn1.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

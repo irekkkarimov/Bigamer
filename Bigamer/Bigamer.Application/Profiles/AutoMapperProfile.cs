@@ -89,6 +89,9 @@ public class AutoMapperProfile : Profile
 
         // MATCH GET ALL
         CreateMap<Match, MatchGetAllResponseItem>()
+            .ForMember(i => i.Id,
+                i => 
+                    i.MapFrom(e => e.Id))
             .ForMember(i => i.GameName,
                 i =>
                     i.MapFrom(e => e.Game.Name))
@@ -122,6 +125,17 @@ public class AutoMapperProfile : Profile
                     i.MapFrom(e => e.Id))
             .ForMember(i => i.ImageUrl,
                 i =>
-                    i.MapFrom(e => e.TeamInfo.ImageUrl));
+                    i.MapFrom(e => e.TeamInfo.ImageUrl))
+            .ForMember(i => i.TeamMatches,
+                i => 
+                    i.MapFrom(e => e.MatchTeams));
+
+        CreateMap<MatchTeam, MatchGetAllResponseTeamMatch>()
+            .ForMember(i => i.MatchId,
+                i =>
+                    i.MapFrom(e => e.MatchId))
+            .ForMember(i => i.TeamResult,
+                i =>
+                    i.MapFrom(e => e.TeamResult));
     }
 }

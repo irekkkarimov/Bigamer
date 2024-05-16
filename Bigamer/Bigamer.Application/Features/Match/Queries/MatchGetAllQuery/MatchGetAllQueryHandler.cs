@@ -36,6 +36,8 @@ public class MatchGetAllQueryHandler : IRequestHandler<MatchGetAllQuery, MatchGe
             .Include(i => i.Game)
             .Include(i => i.Teams)
             .ThenInclude(i => i.TeamInfo)
+            .Include(i => i.Teams)
+            .ThenInclude(i => i.MatchTeams)
             .Include(i => i.MatchInfo)
             .Include(i => i.MatchLinks);
 
@@ -79,7 +81,7 @@ public class MatchGetAllQueryHandler : IRequestHandler<MatchGetAllQuery, MatchGe
 
         return new MatchGetAllResponse
         {
-            Matches = allMatchesToList.Select(i => _mapper.Map<MatchGetAllResponseItem>(i)).ToList(),
+            CurrentMatches = allMatchesToList.Select(i => _mapper.Map<MatchGetAllResponseItem>(i)).ToList(),
             Filter = filter
         };
     }

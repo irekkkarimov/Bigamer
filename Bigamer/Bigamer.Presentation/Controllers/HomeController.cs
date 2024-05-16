@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 using Bigamer.Application.DTOs.Home.GetInfo;
+using Bigamer.Application.Features.Match.Queries.MatchGetAllForHomeQuery;
 using Bigamer.Application.Features.Match.Queries.MatchGetAllQuery;
-using Bigamer.Application.Features.Match.Queries.MatchGetAllQuery.MatchGetRandomActiveQuery;
+using Bigamer.Application.Features.Match.Queries.MatchGetRandomActiveQuery;
 using Bigamer.Application.Features.Team.Queries.TeamGetAllQuery;
 using Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +30,7 @@ public class HomeController : Controller
         var getAllTeamsQuery = new TeamGetAllQuery();
         var getAllTeamsResponse = await _mediator.Send(getAllTeamsQuery);
 
-        var getAllMatchesQuery = new MatchGetAllQuery(new MatchGetAllRequest());
+        var getAllMatchesQuery = new MatchGetAllForHomeQuery();
         var getAllMatchesResponse = await _mediator.Send(getAllMatchesQuery);
         
         var getHomePageInfoDto = new GetHomePageInfoDto

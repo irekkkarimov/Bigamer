@@ -1,5 +1,7 @@
+using System.Text.Json;
 using Bigamer.Application.Extensions;
 using Bigamer.Infrastructure.Extensions;
+using Bigamer.Infrastructure.Models;
 using Bigamer.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,11 +12,18 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton(builder.Configuration.GetSection("EmailSettings").Get<EmailSenderConfiguration>()!);
+
 builder.Services.AddApplicationLayer()
     .AddPersistenceLayer(builder.Configuration)
     .AddInfrastructureLayer();
 
 var app = builder.Build();
+
+using var scope = app.Services.CreateScope();
+var service = scope.ServiceProvider.GetRequiredService<EmailSenderConfiguration>();
+Console.WriteLine("----------------------------------------------------------------------");
+Console.WriteLine(JsonSerializer.Serialize(service));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -7,8 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Bigamer.Application\Bigamer.Application.csproj" />
-      <ProjectReference Include="..\Bigamer.Domain\Bigamer.Domain.csproj" />
+
+        <PackageReference Include="MailKit" Version="4.5.0"/>
+        <ProjectReference Include="..\Bigamer.Application\Bigamer.Application.csproj"/>
+        <ProjectReference Include="..\Bigamer.Domain\Bigamer.Domain.csproj"/>
+
     </ItemGroup>
 
 

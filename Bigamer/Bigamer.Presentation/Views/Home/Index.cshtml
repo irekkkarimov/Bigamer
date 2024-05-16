@@ -70,7 +70,7 @@
                     @if (Model.TodayMatch.WatchLink is not null && Model.TodayMatch.WatchLink != "")
                     {
                         <a target="_blank" href="@Model.TodayMatch.WatchLink" class="default-button reverse-effect">
-                        <span>Watch Now <i class="icofont-play-alt-1"></i></span>
+                            <span>Watch Now <i class="icofont-play-alt-1"></i></span>
                         </a>
                         @* <button onclick="document.getElementById('video-window').disabled = false" class="default-button reverse-effect"> *@
                         @*     <span>Watch Now <i class="icofont-play-alt-1"></i></span> *@
@@ -177,7 +177,7 @@
 </div>
 <div class="section-wrapper">
 <div class="row mb-5">
-    @foreach (var match in Model.MatchesInfo.Matches)
+    @foreach (var match in Model.MatchesInfo.CurrentMatches)
     {
         var dateToShow = match.StartDate is null
             ? ""
@@ -258,7 +258,8 @@
                                             @dateToShow
                                         </span >
                                         <span class="match-time">
-                                            Time: @timeToShow @dayTime
+                                            Time: 
+                                            @timeToShow @dayTime
                                         </span >
                                     </p >
                                 </div >
@@ -290,7 +291,7 @@
 
                                             <li>
                                                 <a href="@link.Link">
-                                                    <img style="height: 50px;" src=@linkImage alt="@link.ServiceName">
+                                                    <img style="height: 50px; border: 100px" src=@linkImage alt="@link.ServiceName">
                                                 </a>
                                             </li>
                                         }
@@ -314,466 +315,227 @@
 </div>
 <div class="row g-5">
 <div class="col-lg-6">
-<div class="upcome-matches">
-<h3 class="upcome-match-header">Upcoming Matches</h3>
-<div class="row g-3">
-<div class="col-12">
-    <div class="match-item-2 item-layer">
-        <div class="match-inner">
-            <div
-                class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-orange">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-5 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team" class="text-center">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-1.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
+    <div class="upcome-matches">
+        <h3 class="upcome-match-header">Upcoming Matches</h3>
+        <div class="row g-3">
+            @foreach (var match in Model.MatchesInfo.UpcomingMatches)
+            {
+                var dateToShow = match.StartDate is null
+                    ? ""
+                    : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
 
-                    </div>
-                    <div class="col-2 d-md-none">
-                        <img src="~/assets/images/match/vs.png" alt="vs">
-                    </div>
-                    <div class="col-md-2 col-5 order-md-3 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-2.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                        <div class="match-game-info text-center">
-                            <h4>
-                                <a href="#">call of duty TOURNAMENT</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span>
-                                <span class="match-time">
-                                    Time:
-                                    08:30PM
-                                </span>
-                            </p>
-                            <ul
-                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                    </a>
-                                </li>
-                            </ul>
+                var timeToShow = match.StartDate is null
+                    ? ""
+                    : $"{match.StartDate.Value.Hour}:{match.StartDate.Value.Minute}";
+
+                var dayTime = match.StartDate is null
+                    ? ""
+                    : match.StartDate.Value.Hour > 11 ? "PM" : "AM";
+
+                <div class="col-12">
+                    <div class="match-item-2 item-layer">
+                        <div class="match-inner">
+                            <div
+                                class="match-header d-flex flex-wrap justify-content-between align-items-center">
+                                <p class="match-team-info">
+                                    @match.Teams.Count group
+                                </p>
+                                <p class="match-prize">Prize Pool <span class="fw-bold">$@match.Prize</span></p>
+                            </div>
+                            <div class="match-content gradient-bg-orange">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-md-2 col-5 p-0">
+                                        <div class="match-team-thumb text-center">
+                                            <a
+                                                asp-controller="Team"
+                                                asp-action="Index"
+                                                asp-route-teamId=@match.Teams[0].TeamId
+                                                class="text-center">
+                                                <img
+                                                    src="@match.Teams[0].ImageUrl"
+                                                    alt="team-img">
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-2 d-md-none">
+                                        <img src="~/assets/images/match/vs.png" alt="vs">
+                                    </div>
+                                    <div class="col-md-2 col-5 order-md-3 p-0">
+                                        <div class="match-team-thumb text-center">
+                                            <a
+                                                asp-controller="Team"
+                                                asp-action="Index"
+                                                asp-route-teamId=@match.Teams[1].TeamId>
+                                                <img
+                                                    src="@match.Teams[1].ImageUrl"
+                                                    alt="team-img">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
+                                        <div class="match-game-info text-center">
+                                            <h4>
+                                                <a href="#">@match.GameName TOURNAMENT</a>
+                                            </h4>
+                                            <p class="d-flex flex-wrap justify-content-center">
+                                                <span class="match-date">
+                                                    @dateToShow
+                                                </span>
+                                                <span class="match-time">
+                                                    Time:
+                                                    @timeToShow @dayTime
+                                                </span>
+                                            </p>
+                                            <ul
+                                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                                                @foreach (var link in match.Links)
+                                                {
+                                                    string linkImage;
+                                                    switch (link.ServiceName)
+                                                    {
+                                                        case LinkType.Undefined:
+                                                        case LinkType.Hltv:
+                                                            linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                            break;
+                                                        case LinkType.Yt:
+                                                            linkImage = "../assets/images/match/social-2.png";
+                                                            break;
+                                                        case LinkType.Twitch:
+                                                            linkImage = "../assets/images/match/social-3.png";
+                                                            break;
+                                                        default:
+                                                            throw new ArgumentOutOfRangeException();
+                                                    }
+
+                                                    <li>
+                                                        <a href="@link.Link">
+                                                            <img style="height: 50px; border: 100px" src=@linkImage alt="@link.ServiceName">
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
-</div>
-<div class="col-12">
-    <div class="match-item-2 item-layer">
-        <div class="match-inner">
-            <div
-                class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-blue">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-5 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team" class="text-center">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-3.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-2 d-md-none">
-                        <img src="~/assets/images/match/vs.png" alt="vs">
-                    </div>
-                    <div class="col-md-2 col-5 order-md-3 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-4.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                        <div class="match-game-info text-center">
-                            <h4>
-                                <a href="#">LEAGUE BATTLE tournament</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span>
-                                <span class="match-time">
-                                    Time:
-                                    08:30PM
-                                </span>
-                            </p>
-                            <ul
-                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-12">
-    <div class="match-item-2 item-layer">
-        <div class="match-inner">
-            <div
-                class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-pink">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-5 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team" class="text-center">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-5.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-2 d-md-none">
-                        <img src="~/assets/images/match/vs.png" alt="vs">
-                    </div>
-                    <div class="col-md-2 col-5 order-md-3 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-6.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                        <div class="match-game-info text-center">
-                            <h4>
-                                <a href="#">pubg classic tournament</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span>
-                                <span class="match-time">
-                                    Time:
-                                    08:30PM
-                                </span>
-                            </p>
-                            <ul
-                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
 </div>
 <div class="col-lg-6">
 <div class="upcome-matches">
 <h3 class="upcome-match-header">Previous Matches</h3>
 <div class="row g-3">
-<div class="col-12">
-    <div class="match-item-2 item-layer">
-        <div class="match-inner">
-            <div
-                class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-pink">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-5 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team" class="text-center">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-7.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
+@foreach (var match in Model.MatchesInfo.PreviousMatches)
+{
+    var dateToShow = match.StartDate is null
+        ? ""
+        : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
 
-                    </div>
-                    <div class="col-2 d-md-none">
-                        <img src="~/assets/images/match/vs.png" alt="vs">
-                    </div>
-                    <div class="col-md-2 col-5 order-md-3 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-8.png"
-                                    alt="team-img">
-                            </a>
+    var timeToShow = match.StartDate is null
+        ? ""
+        : $"{match.StartDate.Value.Hour}:{match.StartDate.Value.Minute}";
+
+    var dayTime = match.StartDate is null
+        ? ""
+        : match.StartDate.Value.Hour > 11 ? "PM" : "AM";
+
+    <div class="col-12">
+        <div class="match-item-2 item-layer">
+            <div class="match-inner">
+                <div
+                    class="match-header d-flex flex-wrap justify-content-between align-items-center">
+                    <p class="match-team-info">
+                        @match.Teams.Count group
+                    </p>
+                    <p class="match-prize">Prize Pool <span class="fw-bold">$@match.Prize</span></p>
+                </div>
+                <div class="match-content gradient-bg-pink">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-2 col-5 p-0">
+                            <div class="match-team-thumb text-center">
+                                <a asp-controller="Team"
+                                   asp-action="Index"
+                                   asp-route-teamId=@match.Teams[0].TeamId class="text-center">
+                                    <img
+                                        src="@match.Teams[0].ImageUrl"
+                                        alt="team-img">
+                                </a>
+                            </div>
+
                         </div>
-                    </div>
-                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                        <div class="match-game-info text-center">
-                            <h4>
-                                <a href="#">4 - 2</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span>
-                                <span class="match-time">
-                                    Time:
-                                    08:30PM
-                                </span>
-                            </p>
-                            <ul
-                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-1.png" alt="vimeo">
+                        <div class="col-2 d-md-none">
+                            <img src="~/assets/images/match/vs.png" alt="vs">
+                        </div>
+                        <div class="col-md-2 col-5 order-md-3 p-0">
+                            <div class="match-team-thumb text-center">
+                                <a asp-controller="Team"
+                                   asp-action="Index"
+                                   asp-route-teamId=@match.Teams[1].TeamId>
+                                    <img
+                                        src="@match.Teams[1].ImageUrl"
+                                        alt="team-img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 order-md-2 mt-4 mt-md-0">
+                            <div class="match-game-info text-center">
+                                <h4>
+                                    <a href="#">
+                                        @match.Teams[0]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.Id)?.TeamResult
+                                        -
+                                        @match.Teams[1]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.Id)?.TeamResult
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                    </a>
-                                </li>
-                            </ul>
+                                </h4>
+                                <p class="d-flex flex-wrap justify-content-center">
+                                    <span class="match-date">
+                                        @dateToShow
+                                    </span>
+                                    <span class="match-time">
+                                        Time:
+                                        @timeToShow @dayTime
+                                    </span>
+                                </p>
+                                <ul
+                                    class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                                    @foreach (var link in match.Links)
+                                    {
+                                        string linkImage;
+                                        switch (link.ServiceName)
+                                        {
+                                            case LinkType.Undefined:
+                                            case LinkType.Hltv:
+                                                linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                break;
+                                            case LinkType.Yt:
+                                                linkImage = "../assets/images/match/social-2.png";
+                                                break;
+                                            case LinkType.Twitch:
+                                                linkImage = "../assets/images/match/social-3.png";
+                                                break;
+                                            default:
+                                                throw new ArgumentOutOfRangeException();
+                                        }
+
+                                        <li>
+                                            <a href="@link.Link">
+                                                <img style="height: 50px; border: 100px" src=@linkImage alt="@link.ServiceName">
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="col-12">
-    <div class="match-item-2 item-layer">
-        <div class="match-inner">
-            <div
-                class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-yellow">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-5 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team" class="text-center">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-9.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-2 d-md-none">
-                        <img src="~/assets/images/match/vs.png" alt="vs">
-                    </div>
-                    <div class="col-md-2 col-5 order-md-3 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-10.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                        <div class="match-game-info text-center">
-                            <h4>
-                                <a href="#">8 - 4</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span>
-                                <span class="match-time">
-                                    Time:
-                                    08:30PM
-                                </span>
-                            </p>
-                            <ul
-                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li>
-                                    <a href="#">
-                                        <img
-                                            src="~/assets/images/match/social-1.png"
-                                            alt="vimeo">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img
-                                            src="~/assets/images/match/social-2.png"
-                                            alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img
-                                            src="~/assets/images/match/social-3.png"
-                                            alt="twitch">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-12">
-    <div class="match-item-2 item-layer">
-        <div class="match-inner">
-            <div
-                class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                <p class="match-team-info">
-                    2 group <span class="fw-bold">32 Players</span>
-                </p>
-                <p class="match-prize">Prize Pool <span class="fw-bold">$3200</span></p>
-            </div>
-            <div class="match-content gradient-bg-blue">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 col-5 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team" class="text-center">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-11.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-2 d-md-none">
-                        <img src="~/assets/images/match/vs.png" alt="vs">
-                    </div>
-                    <div class="col-md-2 col-5 order-md-3 p-0">
-                        <div class="match-team-thumb text-center">
-                            <a asp-controller="Team">
-                                <img
-                                    src="~/assets/images/match/teamsm/teamsm-12.png"
-                                    alt="team-img">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                        <div class="match-game-info text-center">
-                            <h4>
-                                <a href="#">3 - 4</a>
-                            </h4>
-                            <p class="d-flex flex-wrap justify-content-center">
-                                <span class="match-date">
-                                    30
-                                    April 2021
-                                </span>
-                                <span class="match-time">
-                                    Time:
-                                    08:30PM
-                                </span>
-                            </p>
-                            <ul
-                                class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                        <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+}
 </div>
 </div>
 </div>
@@ -849,138 +611,6 @@
                             </div>
                         </div>
                     }
-                    <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/2.jpg);">
-                            <div class="player-inner-2">
-                                <div class="player-thumb-2">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/team/2.png" alt="team-img">
-                                    </a>
-                                </div>
-                                <div class="player-content-2">
-                                    <a asp-controller="Team">
-                                        <h2>Frogs Team</h2>
-                                    </a>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/3.jpg);">
-                            <div class="player-inner-2">
-                                <div class="player-thumb-2">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/team/3.png" alt="team-img">
-                                    </a>
-                                </div>
-                                <div class="player-content-2">
-                                    <a asp-controller="Team">
-                                        <h2>Tigers Team</h2>
-                                    </a>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                        <li>
-                                            <a href="#">
-                                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/4.jpg);">
-                            <div class="player-inner-2">
-                                <div class="player-thumb-2">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/team/4.png" alt="team-img">
-                                    </a>
-                                </div>
-                                <div class="player-content-2">
-                                    <a asp-controller="Team">
-                                        <h2>Shark Team</h2>
-                                    </a>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="player-item-2 text-center" style="background-image: url(../../assets/images/team/5.jpg);">
-                            <div class="player-inner-2">
-                                <div class="player-thumb-2">
-                                    <a asp-controller="Team">
-                                        <img src="~/assets/images/team/5.png" alt="team-img">
-                                    </a>
-                                </div>
-                                <div class="player-content-2">
-                                    <a asp-controller="Team">
-                                        <h2>Gaming Team</h2>
-                                    </a>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-1.png" alt="vimeo">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-2.png" alt="youtube">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.hltv.org/matches/2371661/betboom-vs-cloud9-esports-world-cup-2024-europe-closed-qualifier">
-                                                <img src="~/assets/images/match/social-3.png" alt="twitch">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

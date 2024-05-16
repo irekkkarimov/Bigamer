@@ -5,6 +5,7 @@ namespace Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
 
 public class MatchGetAllResponseItem
 {
+    public Guid Id { get; set; }
     public string GameName { get; set; } = null!;
     public DateTime? StartDate { get; set; }
     public DateTime? FinishDate { get; set; }

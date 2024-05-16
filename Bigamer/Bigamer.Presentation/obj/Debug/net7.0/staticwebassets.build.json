@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "b7d7jtpLUr7PMvJ9xNGmyHDiAYrQ13GOS6h+I4Dx094=",
+  "Hash": "OlGZlIA5CcUB5QbFg8lZbQ46NfYModxe3hHBeL4PVj0=",
   "Source": "Bigamer.Presentation",
   "BasePath": "_content/Bigamer.Presentation",
   "Mode": "Default",
@@ -3128,6 +3128,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\team\\5.png"
     },
     {
+      "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\faze.png",
+      "SourceId": "Bigamer.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bigamer.Presentation",
+      "RelativePath": "assets/images/team/faze.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\team\\faze.png"
+    },
+    {
       "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\insilio.png",
       "SourceId": "Bigamer.Presentation",
       "SourceType": "Discovered",
@@ -3160,6 +3177,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\team\\pngfind.com-csgo-knife-png-75343.png"
+    },
+    {
+      "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\team\\spirit.png",
+      "SourceId": "Bigamer.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bigamer.Presentation",
+      "RelativePath": "assets/images/team/spirit.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\team\\spirit.png"
     },
     {
       "Identity": "C:\\Users\\Booba\\Desktop\\bigamerFolder\\Bigamer\\Bigamer\\Bigamer.Presentation\\wwwroot\\assets\\images\\testimonial\\01.jpg",

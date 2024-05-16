@@ -1,4 +1,3 @@
-using System.Text.Json;
 using AutoMapper;
 using Bigamer.Application.Interfaces;
 using Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
@@ -7,9 +6,9 @@ using Bigamer.Shared.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bigamer.Application.Features.Match.Queries.MatchGetAllQuery.MatchGetRandomActiveQuery;
+namespace Bigamer.Application.Features.Match.Queries.MatchGetRandomActiveQuery;
 
-public class MatchGetRandomActiveQueryHandler : IRequestHandler<MatchGetRandomActiveQuery, MatchGetRandomActiveResponse?>
+public class MatchGetRandomActiveQueryHandler : IRequestHandler<Queries.MatchGetRandomActiveQuery.MatchGetRandomActiveQuery, MatchGetRandomActiveResponse?>
 {
     private readonly IApplicationDbContext _dbContext;
     private readonly IMapper _mapper;
@@ -20,7 +19,7 @@ public class MatchGetRandomActiveQueryHandler : IRequestHandler<MatchGetRandomAc
         _mapper = mapper;
     }
 
-    public async Task<MatchGetRandomActiveResponse?> Handle(MatchGetRandomActiveQuery request, CancellationToken cancellationToken)
+    public async Task<MatchGetRandomActiveResponse?> Handle(Queries.MatchGetRandomActiveQuery.MatchGetRandomActiveQuery request, CancellationToken cancellationToken)
     {
         var match = await _dbContext.Matches
             .Include(i => i.Game)
