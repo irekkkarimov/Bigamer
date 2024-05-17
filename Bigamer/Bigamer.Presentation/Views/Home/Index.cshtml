@@ -1,5 +1,8 @@
 ﻿@using Bigamer.Shared.Enums
+@using Microsoft.AspNetCore.Identity
+@using Bigamer.Domain.Entities
 @model Bigamer.Application.DTOs.Home.GetInfo.GetHomePageInfoDto
+@inject SignInManager<User> SignInManager
 
 @{
     ViewData["Title"] = "Home Page";
@@ -620,35 +623,38 @@
 
 
 <!-- ===========CTA Section start Here========== -->
-<section class="cta-section padding-bottom">
-    <div class="container">
-        <div class="cta-wrapper item-layer">
-            <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0" style="background-image: url(../../assets/images/cta/bg.jpg);">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="cta-content">
-                            <p class="theme-color text-uppercase ls-2">Let's Play together</p>
-                            <h2 class="mb-3">
-                                JOIN <span class="theme-color text-uppercase">bigamer</span> ESPORTS TO BECOME
-                                NEXT PRO GAMER TODAY!
-                            </h2>
-                            <p class="mb-4">
-                                Distinctively provide acces mutfuncto users whereas transparent
-                                proceses somes ncentivize eficient functionalities rather than an
-                                extensible archtectur services and cross
-                            </p>
-                            <a asp-action="Register" asp-controller="Auth" class="default-button">
-                                <span>Join Community <i class="icofont-circled-right"></i></span>
-                            </a>
+@if (!SignInManager.IsSignedIn(User))
+{
+    <section class="cta-section padding-bottom">
+        <div class="container">
+            <div class="cta-wrapper item-layer">
+                <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0" style="background-image: url(../../assets/images/cta/bg.jpg);">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="cta-content">
+                                <p class="theme-color text-uppercase ls-2">Let's Play together</p>
+                                <h2 class="mb-3">
+                                    JOIN <span class="theme-color text-uppercase">bigamer</span> ESPORTS TO BECOME
+                                    NEXT PRO GAMER TODAY!
+                                </h2>
+                                <p class="mb-4">
+                                    Distinctively provide acces mutfuncto users whereas transparent
+                                    proceses somes ncentivize eficient functionalities rather than an
+                                    extensible archtectur services and cross
+                                </p>
+                                <a asp-action="Register" asp-controller="Auth" class="default-button">
+                                    <span>Join Community <i class="icofont-circled-right"></i></span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="cta-thumb text-end">
-                            <img src="~/assets/images/cta/01.png" alt="gamer-img">
+                        <div class="col-lg-6">
+                            <div class="cta-thumb text-end">
+                                <img src="~/assets/images/cta/01.png" alt="gamer-img">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}

@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using Bigamer.Application.Interfaces;
 using Bigamer.Domain.Contracts;
 using Bigamer.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bigamer.Application.Features.Subscription.Commands.SubscribeUserCommand;
@@ -11,13 +13,15 @@ public class SubscribeUserCommandHandler : IRequestHandler<SubscribeUserCommand>
     private readonly IApplicationDbContext _dbContext;
     private readonly IEmailSender _emailSender;
     private readonly IConfirmationCodeGenerator _confirmationCodeGenerator;
+    private readonly SignInManager<Domain.Entities.User> _signInManager;
 
     public SubscribeUserCommandHandler(IApplicationDbContext dbContext, IEmailSender emailSender,
-        IConfirmationCodeGenerator confirmationCodeGenerator)
+        IConfirmationCodeGenerator confirmationCodeGenerator, SignInManager<Domain.Entities.User> signInManager)
     {
         _dbContext = dbContext;
         _emailSender = emailSender;
         _confirmationCodeGenerator = confirmationCodeGenerator;
+        _signInManager = signInManager;
     }
 
     public async Task Handle(SubscribeUserCommand request, CancellationToken cancellationToken)
@@ -54,6 +58,9 @@ public class SubscribeUserCommandHandler : IRequestHandler<SubscribeUserCommand>
             isNew = true;
         }
 
+        var currentUserIdClaim = _signInManager.Context.User.Claims
+            .FirstOrDefault(i => i.Type.Equals(ClaimTypes.NameIdentifier));
+
         var newConfirmationCode = _confirmationCodeGenerator.GenerateCode(6);
 
         subscriberFromDb.ConfirmationCode = newConfirmationCode;
@@ -62,7 +69,11 @@ public class SubscribeUserCommandHandler : IRequestHandler<SubscribeUserCommand>
         subscriberFromDb.LastSubscribeAttempt = DateTime.UtcNow;
 
         if (isNew)
+        {
+            if (currentUserIdClaim is not null)
+                subscriberFromDb.UserId = new Guid(currentUserIdClaim.Value);
             await _dbContext.Subscribers.AddAsync(subscriberFromDb, cancellationToken);
+        }
 
         await _dbContext.Context.SaveChangesAsync(cancellationToken);
         await _emailSender.SendEmailAsync(props.Email, message);

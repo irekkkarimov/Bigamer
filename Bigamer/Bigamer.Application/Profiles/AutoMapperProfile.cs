@@ -4,6 +4,7 @@ using Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
 using Bigamer.Application.Requests.Match.Queries.MatchGetRandomActiveRequest;
 using Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest;
 using Bigamer.Application.Requests.Team.Queries.TeamGetRequest;
+using Bigamer.Application.Requests.User.Queries.UserGetAllRequest;
 using Bigamer.Domain.Entities;
 using Bigamer.Shared.Enums;
 
@@ -137,5 +138,24 @@ public class AutoMapperProfile : Profile
             .ForMember(i => i.TeamResult,
                 i =>
                     i.MapFrom(e => e.TeamResult));
+        
+        
+        // USER GET
+        CreateMap<User, UserGetAllResponseItem>()
+            .ForMember(i => i.FirstName,
+                i =>
+                    i.MapFrom(e => e.UserInfo.FirstName))
+            .ForMember(i => i.LastName,
+                i =>
+                    i.MapFrom(e => e.UserInfo.LastName))
+            .ForMember(i => i.Username,
+                i =>
+                    i.MapFrom(e => e.UserName))
+            .ForMember(i => i.TeamName,
+                i =>
+                    i.MapFrom(e => e.UserInfo.Team != null ? e.UserInfo.Team.Name : null))
+            .ForMember(i => i.IsBanned,
+                i =>
+                    i.MapFrom(e => e.UserInfo.IsBanned));
     }
 }

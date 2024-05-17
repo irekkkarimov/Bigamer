@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Booba\Desktop\bigamerFolder\Bigamer\Bigamer\Bigamer.Presentation
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminDashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXNoYm9hcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminMatchList/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYXRjaExpc3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminProfile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9maWxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminUserList/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyTGlzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml]

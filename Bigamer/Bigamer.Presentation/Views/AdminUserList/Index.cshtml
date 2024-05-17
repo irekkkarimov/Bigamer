@@ -1,0 +1,54 @@
+@model Bigamer.Application.Requests.User.Queries.UserGetAllRequest.UserGetAllResponse
+
+@{
+    Layout = "_AdminLayout";
+    var userCounter = 0;
+}
+
+<div class="page-breadcrumb bg-white">
+    <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">User List</h4>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title">Users</h3>
+                <div class="table-responsive">
+                    <table class="table text-nowrap">
+                        <thead>
+                        <tr>
+                            <th class="border-top-0">#</th>
+                            <th class="border-top-0">First Name</th>
+                            <th class="border-top-0">Last Name</th>
+                            <th class="border-top-0">Username</th>
+                            <th class="border-top-0">Role</th>
+                            <th class="border-top-0">TeamName</th>
+                            <th class="border-top-0">IsBanned</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var user in Model.Users)
+                        {
+                            <tr>
+                                <td>@userCounter</td>
+                                <td>@user.FirstName</td>
+                                <td>@user.LastName</td>
+                                <td>@user.Username</td>
+                                <td>@user.Role</td>
+                                <td>@(user.TeamName ?? "null")</td>
+                                <td>@(user.IsBanned ? "Yes" : "No")</td>
+                            </tr>
+
+                            userCounter++;
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

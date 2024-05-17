@@ -30,7 +30,7 @@ public class AuthController : Controller
         var command = new UserLoginCommand(request);
         await _mediator.Send(command);
 
-        return View();
+        return RedirectToAction("Index", "Home");
     }
 
     [HttpGet]
@@ -45,7 +45,7 @@ public class AuthController : Controller
         var command = new UserRegisterCommand(request);
         await _mediator.Send(command);
 
-        return View();
+        return RedirectToAction("Login");
     }
 
     [HttpPost]

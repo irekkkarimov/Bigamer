@@ -69,12 +69,15 @@
                                 <li>
                                     <a asp-action="Index" asp-controller="Home" class="active">Home</a>
                                 </li>
-                                <li>
-                                    <a asp-action="Index" asp-controller="MatchList" class="active">games</a>
-                                </li>
-                                <li>
-                                    <a asp-action="Index" asp-controller="TeamList" class="active">teams</a>
-                                </li>
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <li>
+                                        <a asp-action="Index" asp-controller="MatchList" class="active">games</a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="TeamList" class="active">teams</a>
+                                    </li>
+                                }
                             </ul>
                             <div style="display: flex; justify-content:center;">
                                 @if (!SignInManager.IsSignedIn(User))

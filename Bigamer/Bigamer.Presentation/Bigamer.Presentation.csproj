@@ -12,6 +12,49 @@
         <Content Include="..\.dockerignore">
             <Link>.dockerignore</Link>
         </Content>
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\.DS_Store" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\chartist\dist\chartist.min.css" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\chartist\dist\chartist.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\counterup\jquery.counterup.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\gmaps.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\gmaps.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\gmaps.min.js.map" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\jquery.gmaps.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.controls.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.core.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.events.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.geofences.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.geometry.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.layers.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.map_types.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.markers.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.native_extensions.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.overlays.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.routes.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.static.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.streetview.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.styles.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\gmaps\lib\gmaps.utils.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\jquery-sparkline\jquery.charts-sparkline.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\jquery-sparkline\jquery.sparkline.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\jquery\dist\core.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\jquery\dist\jquery.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\jquery\dist\jquery.slim.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\css\perfect-scrollbar.min.css" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\js\perfect-scrollbar.jquery.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\js\perfect-scrollbar.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.common.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.esm.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.jquery.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\popper.js\dist\esm\popper-utils.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\popper.js\dist\esm\popper.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\popper.js\dist\popper-utils.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\popper.js\dist\popper.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\popper.js\dist\umd\popper-utils.min.js" />
+        <Content Include="wwwroot\adminAssets\plugins\bower_components\popper.js\dist\umd\popper.min.js" />
 
     </ItemGroup>
 
