@@ -19,16 +19,28 @@ public class TeamGetAllQueryHandler : IRequestHandler<TeamGetAllQuery, TeamGetAl
 
     public async Task<TeamGetAllResponse> Handle(TeamGetAllQuery request, CancellationToken cancellationToken)
     {
-        var teamsFromDb = await _dbContext.Teams
+        var props = request.Props;
+
+        var teamsFromDb = _dbContext.Teams
             .Include(i => i.TeamInfo)
             .Include(i => i.TeamLinks)
-            .ToListAsync(cancellationToken);
+            .Include(i => i.Game);
 
-        Console.WriteLine(teamsFromDb[0].TeamLinks.Count);
+        var totalCount = await teamsFromDb.CountAsync(cancellationToken);
         
-        var result = new TeamGetAllResponse();
+        var teamsFromDbToList = await teamsFromDb
+            .Skip(props.Offset)
+            .Take(props.Limit)
+            .ToListAsync(cancellationToken);
         
-        foreach (var team in teamsFromDb)
+        var result = new TeamGetAllResponse
+        {
+            CurrentOffset = props.Offset,
+            CurrentLimit = props.Limit,
+            TotalCount = totalCount
+        };
+        
+        foreach (var team in teamsFromDbToList)
             result.Teams.Add(_mapper.Map<TeamGetAllResponseItem>(team));
 
         return result;

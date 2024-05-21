@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using Bigamer.Application.Common.Exceptions.User;
@@ -51,7 +50,8 @@ public partial class UserRegisterCommandHandler : IRequestHandler<UserRegisterCo
         var result = await _userManager.CreateAsync(newUser, props.Password);
 
         if (!result.Succeeded)
-            throw new ValidationException(result.Errors.FirstOrDefault()?.Description);
+            throw new BadUserException(result.Errors.FirstOrDefault()?.Description 
+                                              ?? "Registration was not successful");
         
         var newUserInfo = new UserInfo
         {

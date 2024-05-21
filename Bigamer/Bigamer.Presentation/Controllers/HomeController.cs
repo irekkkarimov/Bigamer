@@ -5,6 +5,7 @@ using Bigamer.Application.Features.Match.Queries.MatchGetAllQuery;
 using Bigamer.Application.Features.Match.Queries.MatchGetRandomActiveQuery;
 using Bigamer.Application.Features.Team.Queries.TeamGetAllQuery;
 using Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
+using Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest;
 using Microsoft.AspNetCore.Mvc;
 using Bigamer.Presentation.Models;
 using MediatR;
@@ -27,7 +28,11 @@ public class HomeController : Controller
         var getRandomActiveMatchQuery = new MatchGetRandomActiveQuery();
         var randomActiveMatch = await _mediator.Send(getRandomActiveMatchQuery);
         
-        var getAllTeamsQuery = new TeamGetAllQuery();
+        var getAllTeamsQuery = new TeamGetAllQuery(new TeamGetAllRequest
+        {
+            Offset = 0,
+            Limit = 15
+        });
         var getAllTeamsResponse = await _mediator.Send(getAllTeamsQuery);
 
         var getAllMatchesQuery = new MatchGetAllForHomeQuery();

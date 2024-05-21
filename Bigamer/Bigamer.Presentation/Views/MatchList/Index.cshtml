@@ -65,247 +65,270 @@
 
 <!-- ===========match schedule Section start Here========== -->
 <section class="match-section padding-top padding-bottom">
-<div class="container">
-<div class="section-wrapper">
-<ul class="match-filter-button-group common-filter-button-group d-flex flex-wrap justify-content-center mb-5 text-uppercase">
-    <a asp-action="Index" asp-route-filter="All">
-        <li class="@(Model.Filter == MatchListFilter.All ? "is-checked" : "")">All matches</li>
-    </a>
-    <a asp-action="Index" asp-route-filter="Today">
-        <li class="@(Model.Filter == MatchListFilter.Today ? "is-checked" : "")">today’s matches</li>
-    </a>
-    <a asp-action="Index" asp-route-filter="Upcoming">
-        <li class="@(Model.Filter == MatchListFilter.Upcoming ? "is-checked" : "")">upcoming matches</li>
-    </a>
-    <a asp-action="Index" asp-route-filter="Results">
-        <li class="@(Model.Filter == MatchListFilter.Results ? "is-checked" : "")">matches results</li>
-    </a>
-</ul>
-<div class="row g-4 match-grid">
-@foreach (var match in Model.CurrentMatches)
-{
-    var dateToShow = match.StartDate is null
-        ? ""
-        : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
+    <div class="container">
+        <div class="section-wrapper">
+            <ul 
+                style="align-items: center;"
+                class="match-filter-button-group common-filter-button-group d-flex flex-wrap justify-content-center mb-5 text-uppercase">
+                @if (Model.CurrentOffset != 0)
+                {
+                    <a
+                        asp-action="Index"
+                        asp-route-offset="@(Math.Max(Model.CurrentOffset - Model.CurrentLimit, 0))"
+                        asp-route-limit="@Model.CurrentLimit"
+                        style="margin-right: 10px">
+                        Previous..
+                    </a>
+                }
+                <a asp-action="Index" asp-route-filter="All">
+                    <li class="@(Model.Filter == MatchListFilter.All ? "is-checked" : "")">All matches</li>
+                </a>
+                <a asp-action="Index" asp-route-filter="Today">
+                    <li class="@(Model.Filter == MatchListFilter.Today ? "is-checked" : "")">today’s matches</li>
+                </a>
+                <a asp-action="Index" asp-route-filter="Upcoming">
+                    <li class="@(Model.Filter == MatchListFilter.Upcoming ? "is-checked" : "")">upcoming matches</li>
+                </a>
+                <a asp-action="Index" asp-route-filter="Results">
+                    <li class="@(Model.Filter == MatchListFilter.Results ? "is-checked" : "")">matches results</li>
+                </a>
 
-    var timeToShow = match.StartDate is null
-        ? ""
-        : $"{match.StartDate.Value.Hour}:{match.StartDate.Value.Minute}";
+                @if (Model.CurrentOffset + Model.CurrentLimit < Model.TotalCount)
+                {
+                    <a
+                        asp-action="Index"
+                        asp-route-offset="@(Model.CurrentOffset + Model.CurrentLimit)"
+                        asp-route-limit="@Model.CurrentLimit"
+                        style="margin-left: 10px">
+                        Next..
+                    </a>
+                }
+            </ul>
+            <div class="row g-4 match-grid">
+                @foreach (var match in Model.MatchesByFilter)
+                {
+                    var dateToShow = match.StartDate is null
+                        ? ""
+                        : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
 
-    var dayTime = match.StartDate is null
-        ? ""
-        : match.StartDate.Value.Hour > 11 ? "PM" : "AM";
+                    var timeToShow = match.StartDate is null
+                        ? ""
+                        : $"{match.StartDate.Value.Hour}:{match.StartDate.Value.Minute}";
 
-    if (match.StartDate > DateTime.Now)
-    {
-        <div class="col-12 matchlistitem match-two">
-            <div class="match-item item-layer">
-                <div class="match-inner">
-                    <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                        <p class="match-team-info">
-                            2 group
-                            <span class="fw-bold">
-                                @match.Teams.Count
-                                Teams
-                            </span>
-                        </p>
-                        <p class="match-prize">
-                            Prize Pool
-                            <span class="fw-bold">
-                                $@match.Prize
-                            </span >
-                        </p>
-                    </div>
-                    <div class="match-content gradient-bg-pink">
-                        <div class="row gy-4 align-items-center justify-content-center">
-                            <div class="col-xl-4 col-md-6 order-md-2">
-                                <div class="match-game-team">
-                                    <ul class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
-                                        <li class="match-team-thumb">
-                                            <a
-                                                asp-action="Index"
-                                                asp-route-teamId="@match.Teams[0].TeamId"
-                                                asp-controller="Team">
-                                                <img style="height: 86px;" src="@match.Teams[0].ImageUrl"
-                                                     alt="team-img">
-                                            </a>
-                                        </li >
-                                        <l class="text-center">
-                                            <img
-                                                class="w-75 w-md-100"
-                                                src="~/assets/images/match/vs.png"
-                                                alt="vs">
-                                        </l>
-                                        <li class="match-team-thumb">
-                                            <a
-                                                asp-action="Index"
-                                                asp-route-teamId="@match.Teams[1].TeamId"
-                                                asp-controller="Team">
-                                                <img style="height: 86px;" src="../../@match.Teams[1].ImageUrl"
-                                                     alt="team-img">
-                                            </a>
-                                        </li >
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 order-md-1">
-                                <div class="match-game-info">
-                                    <h4>
-                                        <a href="#">
-                                            @match.GameName
-                                            tournament
-                                        </a>
-                                    </h4>
-                                    <p class="d-flex flex-wrap justify-content-center  justify-content-md-start">
-                                        <span class="match-date">
-                                            @dateToShow
-                                        </span >
-                                        <span class="match-time">
-                                            Time: @timeToShow @dayTime
-                                        </span >
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 order-md-3">
-                                <div class="match-game-social">
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center justify-content-xl-start">
-                                        @foreach (var link in match.Links)
-                                        {
-                                            string linkImage;
-                                            switch (link.ServiceName)
-                                            {
-                                                case LinkType.Undefined:
-                                                case LinkType.Hltv:
-                                                    linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
-                                                    break;
-                                                case LinkType.Yt:
-                                                    linkImage = "../assets/images/match/social-2.png";
-                                                    break;
-                                                case LinkType.Twitch:
-                                                    linkImage = "../assets/images/match/social-3.png";
-                                                    break;
-                                                default:
-                                                    throw new ArgumentOutOfRangeException();
-                                            }
+                    var dayTime = match.StartDate is null
+                        ? ""
+                        : match.StartDate.Value.Hour > 11 ? "PM" : "AM";
 
-                                            <li>
-                                                <a href="@link.Link">
-                                                    <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
-                                                </a>
-                                            </li>
-                                        }
-                                        <a href="@match.Links[0].Link"
-                                           class="default-button reverse-effect">
-                                            <span>
-                                                Watch Now
-                                                <i class="icofont-play-alt-1">
-                                                </i>
+                    if (match.StartDate > DateTime.Now)
+                    {
+                        <div class="col-12 matchlistitem match-two">
+                            <div class="match-item item-layer">
+                                <div class="match-inner">
+                                    <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
+                                        <p class="match-team-info">
+                                            2 group
+                                            <span class="fw-bold">
+                                                @match.Teams.Count
+                                                Teams
                                             </span>
-                                        </a>
-                                    </ul>
+                                        </p>
+                                        <p class="match-prize">
+                                            Prize Pool
+                                            <span class="fw-bold">
+                                                $@match.Prize
+                                            </span >
+                                        </p>
+                                    </div>
+                                    <div class="match-content gradient-bg-pink">
+                                        <div class="row gy-4 align-items-center justify-content-center">
+                                            <div class="col-xl-4 col-md-6 order-md-2">
+                                                <div class="match-game-team">
+                                                    <ul class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
+                                                        <li class="match-team-thumb">
+                                                            <a
+                                                                asp-action="Index"
+                                                                asp-route-teamId="@match.Teams[0].TeamId"
+                                                                asp-controller="Team">
+                                                                <img style="height: 86px;" src="@match.Teams[0].ImageUrl"
+                                                                     alt="team-img">
+                                                            </a>
+                                                        </li >
+                                                        <l class="text-center">
+                                                            <img
+                                                                class="w-75 w-md-100"
+                                                                src="~/assets/images/match/vs.png"
+                                                                alt="vs">
+                                                        </l>
+                                                        <li class="match-team-thumb">
+                                                            <a
+                                                                asp-action="Index"
+                                                                asp-route-teamId="@match.Teams[1].TeamId"
+                                                                asp-controller="Team">
+                                                                <img style="height: 86px;" src="../../@match.Teams[1].ImageUrl"
+                                                                     alt="team-img">
+                                                            </a>
+                                                        </li >
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 order-md-1">
+                                                <div class="match-game-info">
+                                                    <h4>
+                                                        <a href="#">
+                                                            @match.GameName
+                                                            tournament
+                                                        </a>
+                                                    </h4>
+                                                    <p class="d-flex flex-wrap justify-content-center  justify-content-md-start">
+                                                        <span class="match-date">
+                                                            @dateToShow
+                                                        </span >
+                                                        <span class="match-time">
+                                                            Time: @timeToShow @dayTime
+                                                        </span >
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 order-md-3">
+                                                <div class="match-game-social">
+                                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center justify-content-xl-start">
+                                                        @foreach (var link in match.Links)
+                                                        {
+                                                            string linkImage;
+                                                            switch (link.ServiceName)
+                                                            {
+                                                                case LinkType.Undefined:
+                                                                case LinkType.Hltv:
+                                                                    linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                                    break;
+                                                                case LinkType.Yt:
+                                                                    linkImage = "../assets/images/match/social-2.png";
+                                                                    break;
+                                                                case LinkType.Twitch:
+                                                                    linkImage = "../assets/images/match/social-3.png";
+                                                                    break;
+                                                                default:
+                                                                    throw new ArgumentOutOfRangeException();
+                                                            }
+
+                                                            <li>
+                                                                <a href="@link.Link">
+                                                                    <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
+                                                                </a>
+                                                            </li>
+                                                        }
+                                                        <a href="@match.Links[0].Link"
+                                                           class="default-button reverse-effect">
+                                                            <span>
+                                                                Watch Now
+                                                                <i class="icofont-play-alt-1">
+                                                                </i>
+                                                            </span>
+                                                        </a>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-    else
-    {
-        <div class="col-12 matchlistitem match-three">
-            <div class="match-item-2 item-layer">
-                <div class="match-inner">
-                    <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
-                        <p class="match-team-info">
-                            @match.Teams.Count group <span class="fw-bold">32 Players</span>
-                        </p>
-                        <p class="match-prize">Prize Pool <span class="fw-bold">$@match.Prize</span></p>
-                    </div>
-                    <div class="match-content gradient-bg-blue">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-md-2 col-5 p-0">
-                                <div class="match-team-thumb text-center">
-                                    <a
-                                        asp-controller="Team"
-                                        asp-action="Index"
-                                        asp-route-teamId=@match.Teams[0].TeamId
-                                        class="text-center">
-                                        <img style="height: 100px;" src="@match.Teams[0].ImageUrl"/>
-                                    </a>
-                                </div>
+                    }
+                    else
+                    {
+                        <div class="col-12 matchlistitem match-three">
+                            <div class="match-item-2 item-layer">
+                                <div class="match-inner">
+                                    <div class="match-header d-flex flex-wrap justify-content-between align-items-center">
+                                        <p class="match-team-info">
+                                            @match.Teams.Count group <span class="fw-bold">32 Players</span>
+                                        </p>
+                                        <p class="match-prize">Prize Pool <span class="fw-bold">$@match.Prize</span></p>
+                                    </div>
+                                    <div class="match-content gradient-bg-blue">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col-md-2 col-5 p-0">
+                                                <div class="match-team-thumb text-center">
+                                                    <a
+                                                        asp-controller="Team"
+                                                        asp-action="Index"
+                                                        asp-route-teamId=@match.Teams[0].TeamId
+                                                        class="text-center">
+                                                        <img style="height: 100px;" src="@match.Teams[0].ImageUrl"/>
+                                                    </a>
+                                                </div>
 
-                            </div>
-                            <div class="col-2 d-md-none">
-                                <img src="~/assets/images/match/vs.png" alt="vs">
-                            </div>
-                            <div class="col-md-2 col-5 order-md-3 p-0">
-                                <div class="match-team-thumb text-center">
-                                    <a
-                                        asp-controller="Team"
-                                        asp-action="Index"
-                                        asp-route-teamId=@match.Teams[1].TeamId>
-                                        <img style="height: 100px;" src="@match.Teams[1].ImageUrl" alt="team-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-8 order-md-2 mt-4 mt-md-0">
-                                <div class="match-game-info text-center">
-                                    <h4>
-                                        <a href="#">
-                                            @match.Teams[0]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.Id)?.TeamResult
-                                            -
-                                            @match.Teams[1]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.Id)?.TeamResult
-                                        </a>
-                                    </h4>
-                                    <p class="d-flex flex-wrap justify-content-center">
-                                        <span class="match-date">
-                                            @dateToShow
-                                            @timeToShow
-                                        </span>
-                                        <span class="match-time">
-                                            Time:
-                                            @timeToShow @dayTime
-                                        </span>
-                                    </p>
-                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                                        @foreach (var link in match.Links)
-                                        {
-                                            string linkImage;
-                                            switch (link.ServiceName)
-                                            {
-                                                case LinkType.Undefined:
-                                                case LinkType.Hltv:
-                                                    linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
-                                                    break;
-                                                case LinkType.Yt:
-                                                    linkImage = "../assets/images/match/social-2.png";
-                                                    break;
-                                                case LinkType.Twitch:
-                                                    linkImage = "../assets/images/match/social-3.png";
-                                                    break;
-                                                default:
-                                                    throw new ArgumentOutOfRangeException();
-                                            }
+                                            </div>
+                                            <div class="col-2 d-md-none">
+                                                <img src="~/assets/images/match/vs.png" alt="vs">
+                                            </div>
+                                            <div class="col-md-2 col-5 order-md-3 p-0">
+                                                <div class="match-team-thumb text-center">
+                                                    <a
+                                                        asp-controller="Team"
+                                                        asp-action="Index"
+                                                        asp-route-teamId=@match.Teams[1].TeamId>
+                                                        <img style="height: 100px;" src="@match.Teams[1].ImageUrl" alt="team-img">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 order-md-2 mt-4 mt-md-0">
+                                                <div class="match-game-info text-center">
+                                                    <h4>
+                                                        <a href="#">
+                                                            @match.Teams[0]?.TeamResult
+                                                            -
+                                                            @match.Teams[1]?.TeamResult
+                                                        </a>
+                                                    </h4>
+                                                    <p class="d-flex flex-wrap justify-content-center">
+                                                        <span class="match-date">
+                                                            @dateToShow
+                                                            @timeToShow
+                                                        </span>
+                                                        <span class="match-time">
+                                                            Time:
+                                                            @timeToShow @dayTime
+                                                        </span>
+                                                    </p>
+                                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                                                        @foreach (var link in match.Links)
+                                                        {
+                                                            string linkImage;
+                                                            switch (link.ServiceName)
+                                                            {
+                                                                case LinkType.Undefined:
+                                                                case LinkType.Hltv:
+                                                                    linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                                    break;
+                                                                case LinkType.Yt:
+                                                                    linkImage = "../assets/images/match/social-2.png";
+                                                                    break;
+                                                                case LinkType.Twitch:
+                                                                    linkImage = "../assets/images/match/social-3.png";
+                                                                    break;
+                                                                default:
+                                                                    throw new ArgumentOutOfRangeException();
+                                                            }
 
-                                            <li>
-                                                <a href="@link.Link">
-                                                    <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
-                                                </a>
-                                            </li>
-                                        }
-                                    </ul>
+                                                            <li>
+                                                                <a href="@link.Link">
+                                                                    <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
+                                                                </a>
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    }
+                }
             </div>
         </div>
-    }
-}
-</div>
-</div>
-</div>
+    </div>
 </section>
 <!-- ===========match schedule Section Ends Here========== -->

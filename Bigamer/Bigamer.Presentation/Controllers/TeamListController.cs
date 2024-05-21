@@ -1,4 +1,5 @@
 using Bigamer.Application.Features.Team.Queries.TeamGetAllQuery;
+using Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,13 @@ public class TeamListController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index([FromQuery] int offset = 0, [FromQuery] int limit = 2)
     {
-        var query = new TeamGetAllQuery();
+        var query = new TeamGetAllQuery(new TeamGetAllRequest
+        {
+            Offset = offset,
+            Limit = limit
+        });
         var result = await _mediator.Send(query);
         
         return View(result);

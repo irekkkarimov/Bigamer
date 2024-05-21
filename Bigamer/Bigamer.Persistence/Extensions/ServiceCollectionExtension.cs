@@ -1,6 +1,7 @@
 using Bigamer.Application.Interfaces;
 using Bigamer.Domain.Entities;
 using Bigamer.Persistence.Context;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +19,8 @@ public static class ServiceCollectionExtension
         {
             options.SignIn.RequireConfirmedAccount = false;
         })
-            .AddEntityFrameworkStores<ApplicationDbContext>();
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
         return services;
     }

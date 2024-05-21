@@ -32,18 +32,24 @@ public class MatchGetAllForHomeQueryHandler : IRequestHandler<MatchGetAllForHome
         var currentMatches = (await matchesQueryable
             .Where(i => i.StartDate < DateTime.UtcNow
                         && (i.FinishDate == null || i.FinishDate > DateTime.UtcNow))
+            .OrderByDescending(i => i.StartDate)
+            .Take(3)
             .ToListAsync(cancellationToken: cancellationToken))
             .Select(i => _mapper.Map<MatchGetAllResponseItem>(i))
             .ToList();
         
         var upcomingMatches = (await matchesQueryable
             .Where(i => i.StartDate > DateTime.UtcNow)
+            .OrderByDescending(i => i.StartDate)
+            .Take(3)
             .ToListAsync(cancellationToken: cancellationToken))
             .Select(i => _mapper.Map<MatchGetAllResponseItem>(i))
             .ToList();
         
         var previousMatches = (await matchesQueryable
             .Where(i => i.FinishDate < DateTime.UtcNow)
+            .OrderByDescending(i => i.StartDate)
+            .Take(3)
             .ToListAsync(cancellationToken: cancellationToken))
             .Select(i => _mapper.Map<MatchGetAllResponseItem>(i))
             .ToList();

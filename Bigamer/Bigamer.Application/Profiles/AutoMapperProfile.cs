@@ -2,6 +2,7 @@ using AutoMapper;
 using Bigamer.Application.DTOs.Links;
 using Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest;
 using Bigamer.Application.Requests.Match.Queries.MatchGetRandomActiveRequest;
+using Bigamer.Application.Requests.Match.Queries.MatchGetRecentRequest;
 using Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest;
 using Bigamer.Application.Requests.Team.Queries.TeamGetRequest;
 using Bigamer.Application.Requests.User.Queries.UserGetAllRequest;
@@ -22,6 +23,9 @@ public class AutoMapperProfile : Profile
             .ForMember(i => i.Name,
                 i =>
                     i.MapFrom(e => e.Name))
+            .ForMember(i => i.GameName,
+                i =>
+                    i.MapFrom(e => e.Game.Name))
             .ForMember(i => i.ImageUrl,
                 i =>
                     i.MapFrom(e => e.TeamInfo.ImageUrl))
@@ -90,7 +94,7 @@ public class AutoMapperProfile : Profile
 
         // MATCH GET ALL
         CreateMap<Match, MatchGetAllResponseItem>()
-            .ForMember(i => i.Id,
+            .ForMember(i => i.MatchId,
                 i => 
                     i.MapFrom(e => e.Id))
             .ForMember(i => i.GameName,
@@ -138,6 +142,39 @@ public class AutoMapperProfile : Profile
             .ForMember(i => i.TeamResult,
                 i =>
                     i.MapFrom(e => e.TeamResult));
+        
+        
+        // MATCH GET RECENT 
+        CreateMap<Match, MatchGetRecentResponseItem>()
+            .ForMember(i => i.MatchId,
+                i => 
+                    i.MapFrom(e => e.Id))
+            .ForMember(i => i.GameName,
+                i =>
+                    i.MapFrom(e => e.Game.Name))
+            .ForMember(i => i.StartDate,
+                i =>
+                    i.MapFrom(e => e.StartDate))
+            .ForMember(i => i.FinishDate,
+                i =>
+                    i.MapFrom(e => e.FinishDate))
+            .ForMember(i => i.Prize,
+                i =>
+                    i.MapFrom(e => e.MatchInfo.Prize))
+            .ForMember(i => i.Teams,
+                i =>
+                    i.MapFrom(e => e.Teams));
+        
+        CreateMap<Team, MatchGetRecentResponseTeam>()
+            .ForMember(i => i.TeamId,
+                i =>
+                    i.MapFrom(e => e.Id))
+            .ForMember(i => i.TeamName,
+                i => 
+                    i.MapFrom(e => e.Name))
+            .ForMember(i => i.TakenPlace,
+                i => 
+                    i.MapFrom(e => e.MatchTeams[0].TakenPlace));
         
         
         // USER GET

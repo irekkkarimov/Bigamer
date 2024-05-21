@@ -489,9 +489,9 @@
                             <div class="match-game-info text-center">
                                 <h4>
                                     <a href="#">
-                                        @match.Teams[0]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.Id)?.TeamResult
+                                        @match.Teams[0]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.MatchId)?.TeamResult
                                         -
-                                        @match.Teams[1]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.Id)?.TeamResult
+                                        @match.Teams[1]?.TeamMatches.FirstOrDefault(i => i.MatchId == match.MatchId)?.TeamResult
                                     </a>
                                 </h4>
                                 <p class="d-flex flex-wrap justify-content-center">
@@ -604,7 +604,7 @@
 
                                                 <li>
                                                     <a href="@link.Link">
-                                                        <img style="height: 50px;" src=@linkImage alt="@link.ServiceName">
+                                                        <img style="height: 50px; border-radius: 100px;" src=@linkImage alt="@link.ServiceName">
                                                     </a>
                                                 </li>
                                             }

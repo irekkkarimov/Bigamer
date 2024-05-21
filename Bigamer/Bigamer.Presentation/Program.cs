@@ -1,10 +1,14 @@
 using System.Text.Json;
+using Bigamer.Application.Common.Exceptions.Abstractions;
 using Bigamer.Application.Extensions;
 using Bigamer.Infrastructure.Extensions;
 using Bigamer.Infrastructure.Models;
 using Bigamer.Persistence.Extensions;
+using Bigamer.Presentation.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ExceptionHandlingMiddleware>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -33,6 +37,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

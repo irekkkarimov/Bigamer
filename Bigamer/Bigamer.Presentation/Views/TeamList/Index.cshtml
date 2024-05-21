@@ -1,4 +1,3 @@
-
 @using Bigamer.Shared.Enums
 @model Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest.TeamGetAllResponse
 
@@ -27,61 +26,81 @@
 
 <!-- ===========Player  Section start Here========== -->
 <div class="player-section padding-top padding-bottom">
-<div class="container">
-<div class="section-wrapper">
-<div class="row g-4 justify-content-center">
-    @foreach (var team in Model.Teams)
-    {
-        <div class="col-lg-4 col-sm-6 col-12">
-            <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/2.jpg);">
-                <div class="player-inner-2">
-                    <div class="player-thumb-2">
-                        <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
-                            <img 
-                                style="height: 220px;"
-                                src="../../@team.ImageUrl" alt="team-img">
-                        </a>
-                    </div>
-                    <div class="player-content-2">
-                        <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
-                            <h2>@team.Name</h2>
-                        </a>
-                        <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
-                            @foreach (var link in team.Links)
-                            {
-
-                                string linkImage;
-                                switch (link.ServiceName)
-                                {
-                                    case LinkType.Undefined:
-                                    case LinkType.Hltv:
-                                        linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
-                                        break;
-                                    case LinkType.Yt:
-                                        linkImage = "../assets/images/match/social-2.png";
-                                        break;
-                                    case LinkType.Twitch:
-                                        linkImage = "../assets/images/match/social-3.png";
-                                        break;
-                                    default:
-                                        throw new ArgumentOutOfRangeException();
-                                }
-                                
-                                <li>
-                                    <a href="@link.Link">
-                                        <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
+    <div class="container">
+        <div class="section-wrapper">
+            <div style="display: flex; margin-left: auto; margin-right: auto; justify-content: center; margin-bottom: 10px;">
+                @if (Model.CurrentOffset != 0)
+                {
+                    <a
+                        asp-action="Index"
+                        asp-route-offset="@(Math.Max(Model.CurrentOffset - Model.CurrentLimit, 0))"
+                        asp-route-limit="@Model.CurrentLimit"
+                        style="margin-right: 25px; width: fit-content">
+                        Previous..
+                    </a>
+                }
+                @if (Model.CurrentOffset + Model.CurrentLimit < Model.TotalCount)
+                {
+                    <a
+                        asp-action="Index"
+                        asp-route-offset="@(Model.CurrentOffset + Model.CurrentLimit)"
+                        asp-route-limit="@Model.CurrentLimit">
+                        Next..
+                    </a>
+                }
+            </div>
+            <div class="row g-4 justify-content-center">
+                @foreach (var team in Model.Teams)
+                {
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="player-item-2 text-center" style="background-image: url(../assets/images/team/2.jpg);">
+                            <div class="player-inner-2">
+                                <div class="player-thumb-2">
+                                    <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
+                                        <img
+                                            style="height: 220px;"
+                                            src="../../@team.ImageUrl" alt="team-img">
                                     </a>
-                                </li>
-                            }
-                        </ul>
+                                </div>
+                                <div class="player-content-2">
+                                    <a asp-action="Index" asp-route-teamId="@team.TeamId" asp-controller="Team">
+                                        <h2>@team.Name</h2>
+                                    </a>
+                                    <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center">
+                                        @foreach (var link in team.Links)
+                                        {
+                                            string linkImage;
+                                            switch (link.ServiceName)
+                                            {
+                                                case LinkType.Undefined:
+                                                case LinkType.Hltv:
+                                                    linkImage = "https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw";
+                                                    break;
+                                                case LinkType.Yt:
+                                                    linkImage = "../assets/images/match/social-2.png";
+                                                    break;
+                                                case LinkType.Twitch:
+                                                    linkImage = "../assets/images/match/social-3.png";
+                                                    break;
+                                                default:
+                                                    throw new ArgumentOutOfRangeException();
+                                            }
+
+                                            <li>
+                                                <a href="@link.Link">
+                                                    <img style="height: 50px; border-radius: 100px" src=@linkImage alt="@link.ServiceName">
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
-    }
-</div>
-</div>
-</div>
+    </div>
 </div>
 <!-- ===========Player  Section Ends Here========== -->
 

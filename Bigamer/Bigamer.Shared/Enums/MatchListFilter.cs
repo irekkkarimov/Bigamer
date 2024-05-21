@@ -5,5 +5,6 @@ public enum MatchListFilter
     All,
     Today,
     Upcoming,
-    Results
+    Results,
+    Current
 }

@@ -2,7 +2,7 @@
 
 @{
     Layout = "_AdminLayout";
-    var userCounter = 0;
+    var userCounter = Model.CurrentOffset + 1;
 }
 
 <div class="page-breadcrumb bg-white">
@@ -16,7 +16,28 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Users</h3>
+                <div style="display: flex; align-items: center;">
+                    <h3 class="box-title" style="margin-right: 20px">Users</h3>
+                    @if (Model.CurrentOffset != 0)
+                    {
+                        <a
+                            asp-action="Index"
+                            asp-route-offset="@(Math.Max(Model.CurrentOffset - Model.CurrentLimit, 0))"
+                            asp-route-limit="@Model.CurrentLimit"
+                            style="margin-right: 5px">
+                            Previous..
+                        </a>
+                    }
+                    @if (Model.CurrentOffset + Model.CurrentLimit < Model.TotalCount)
+                    {
+                        <a
+                            asp-action="Index"
+                            asp-route-offset="@(Model.CurrentOffset + Model.CurrentLimit)"
+                            asp-route-limit="@Model.CurrentLimit">
+                            Next..
+                        </a>
+                    }
+                </div>
                 <div class="table-responsive">
                     <table class="table text-nowrap">
                         <thead>

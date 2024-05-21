@@ -1,0 +1,73 @@
+@model Bigamer.Application.Requests.Team.Queries.TeamGetAllRequest.TeamGetAllResponse 
+
+@{
+    Layout = "_AdminLayout";
+    var counter = Model.CurrentOffset + 1;
+}
+
+<div class="page-breadcrumb bg-white">
+    <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Team List</h4>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <div style="display: flex; align-items: center;">
+                    <h3 class="box-title" style="margin-right: 20px">Users</h3>
+                    @if (Model.CurrentOffset != 0)
+                    {
+                        <a
+                            asp-action="Index"
+                            asp-route-offset="@(Math.Max(Model.CurrentOffset - Model.CurrentLimit, 0))"
+                            asp-route-limit="@Model.CurrentLimit"
+                            style="margin-right: 5px">
+                            Previous..
+                        </a>
+                    }
+                    @if (Model.CurrentOffset + Model.CurrentLimit < Model.TotalCount)
+                    {
+                        <a
+                            asp-action="Index"
+                            asp-route-offset="@(Model.CurrentOffset + Model.CurrentLimit)"
+                            asp-route-limit="@Model.CurrentLimit">
+                            Next..
+                        </a>
+                    }
+                </div>
+                <div class="table-responsive">
+                    <table class="table text-nowrap">
+                        <thead>
+                        <tr>
+                            <th class="border-top-0">#</th>
+                            <th class="border-top-0">Team Name</th>
+                            <th class="border-top-0">Game</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var team in Model.Teams)
+                        {
+                            <tr>
+                                <td>@(counter++)</td>
+                                <td class="txt-oflo">
+                                    <a
+                                        target="_blank"
+                                        asp-controller="Team"
+                                        asp-action="Index"
+                                        asp-route-teamId="@team.TeamId">
+                                        @team.Name
+                                    </a>
+                                </td>
+                                <td>@team.GameName</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

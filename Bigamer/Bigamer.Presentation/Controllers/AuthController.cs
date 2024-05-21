@@ -40,7 +40,7 @@ public class AuthController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Register([FromForm] UserRegisterRequest request)
+    public async Task<IActionResult> Register([FromBody] UserRegisterRequest request)
     {
         var command = new UserRegisterCommand(request);
         await _mediator.Send(command);

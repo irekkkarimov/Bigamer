@@ -2,7 +2,6 @@ using AutoMapper;
 using Bigamer.Application.Interfaces;
 using Bigamer.Application.Requests.User.Queries.UserGetAllRequest;
 using MediatR;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,16 +23,24 @@ public class UserGetAllQueryHandler : IRequestHandler<UserGetAllQuery, UserGetAl
 
     public async Task<UserGetAllResponse> Handle(UserGetAllQuery request, CancellationToken cancellationToken)
     {
-        var allUsersFromDb = await _dbContext.Users
-            .Include(i => i.UserInfo)
-            .ThenInclude(i => i.Team)
-            .ToListAsync(cancellationToken);
+        var props = request.Props;
 
+        var allUsersFromDb = _dbContext.Users
+            .Include(i => i.UserInfo)
+            .ThenInclude(i => i.Team);
+
+        var totalCount = await allUsersFromDb.CountAsync(cancellationToken);
+
+        var allUserFromDbToList = await allUsersFromDb
+            .Skip(props.Offset)
+            .Take(props.Limit)
+            .ToListAsync(cancellationToken);
+        
         var usersWithRoles = new List<(Domain.Entities.User, string)>();
 
-        foreach (var user in allUsersFromDb)
+        foreach (var user in allUserFromDbToList)
         {
-            var rolePriority = new Dictionary<string, int>()
+            var rolePriority = new Dictionary<string, int>
             {
                 { "user", 0 },
                 { "player", 1 },
@@ -63,7 +70,10 @@ public class UserGetAllQueryHandler : IRequestHandler<UserGetAllQuery, UserGetAl
 
         return new UserGetAllResponse
         {
-            Users = mappedUsers
+            Users = mappedUsers,
+            CurrentOffset = props.Offset,
+            CurrentLimit = props.Limit,
+            TotalCount = totalCount
         };
     }
 }

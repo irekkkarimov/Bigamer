@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bigamer.Presentation.Controllers;
 
-[Authorize]
+[Authorize(Roles = "admin")]
 [Route("Admin/Profile")]
 public class AdminProfileController : Controller
 {

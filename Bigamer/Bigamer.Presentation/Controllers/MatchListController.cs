@@ -18,11 +18,16 @@ public class MatchListController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index([FromQuery] string? filter)
+    public async Task<IActionResult> Index(
+        [FromQuery] string? filter, 
+        [FromQuery] int offset = 0,
+        [FromQuery] int limit = 1)
     {
         var getAllMatchesQuery = new MatchGetAllQuery(new MatchGetAllRequest
         {
-            Filter = filter
+            Filter = filter,
+            Offset = offset,
+            Limit = limit
         });
         var allMatches = await _mediator.Send(getAllMatchesQuery);
         

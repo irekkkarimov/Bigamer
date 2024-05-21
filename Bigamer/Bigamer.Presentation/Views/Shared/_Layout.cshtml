@@ -65,7 +65,7 @@
                             </a>
                         </div>
                         <div class="menu-area w-100 d-flex justify-content-sm-between">
-                            <ul class="menu d-flex justify-content-sm-between w-50">
+                            <ul class="menu d-flex justify-content-sm-between w-60">
                                 <li>
                                     <a asp-action="Index" asp-controller="Home" class="active">Home</a>
                                 </li>
@@ -77,6 +77,15 @@
                                     <li>
                                         <a asp-action="Index" asp-controller="TeamList" class="active">teams</a>
                                     </li>
+                                    
+                                    if (SignInManager.Context.User.IsInRole("admin"))
+                                    {
+                                        <li>
+                                            <a asp-action="Index" asp-controller="AdminDashboard" class="active">
+                                                admin panel
+                                            </a>
+                                        </li>   
+                                    }
                                 }
                             </ul>
                             <div style="display: flex; justify-content:center;">

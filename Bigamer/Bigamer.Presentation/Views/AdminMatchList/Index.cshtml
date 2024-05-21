@@ -1,7 +1,10 @@
-@page
+@model Bigamer.Application.Requests.Match.Queries.MatchGetAllRequest.MatchGetAllResponse
+@using Bigamer.Shared.Enums
 
 @{
     Layout = "_AdminLayout";
+    var counter = Model.CurrentOffset + 1;
+    Console.WriteLine(Model.Filter);
 }
 
 <div class="page-breadcrumb bg-white">
@@ -15,62 +18,159 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Matches</h3>
-                <p class="text-muted">Add class <code>.table</code></p>
+                <div style="display: flex; align-items: center;">
+                    <h3 class="box-title" style="margin-right: 20px">Users</h3>
+                    @if (Model.CurrentOffset != 0)
+                    {
+                        <a
+                            asp-action="Index"
+                            asp-route-offset="@(Math.Max(Model.CurrentOffset - Model.CurrentLimit, 0))"
+                            asp-route-limit="@Model.CurrentLimit"
+                            style="margin-right: 5px">
+                            Previous..
+                        </a>
+                    }
+                    @if (Model.CurrentOffset + Model.CurrentLimit < Model.TotalCount)
+                    {
+                        <a
+                            asp-action="Index"
+                            asp-route-offset="@(Model.CurrentOffset + Model.CurrentLimit)"
+                            asp-route-limit="@Model.CurrentLimit">
+                            Next..
+                        </a>
+                    }
+                </div>
+                <select
+                    onchange="location = `http://localhost:5002/Admin/MatchList?filter=${this.value}`"
+                    name="match-type"
+                    id="match-type">
+                    <option selected="@(Model.Filter == MatchListFilter.All)" value="@MatchListFilter.All">
+                        All
+                    </option>
+                    <option selected="@(Model.Filter == MatchListFilter.Results)" value="@MatchListFilter.Results">
+                        Previous
+                    </option>
+                    <option selected="@(Model.Filter == MatchListFilter.Current)" value="@MatchListFilter.Current">
+                        Current
+                    </option>
+                    <option selected="@(Model.Filter == MatchListFilter.Upcoming)" value="@MatchListFilter.Upcoming">
+                        Upcoming
+                    </option>
+                </select>
                 <div class="table-responsive">
                     <table class="table text-nowrap">
                         <thead>
                         <tr>
                             <th class="border-top-0">#</th>
-                            <th class="border-top-0">First Name</th>
-                            <th class="border-top-0">Last Name</th>
-                            <th class="border-top-0">Username</th>
-                            <th class="border-top-0">Role</th>
+                            <th class="border-top-0">Match Title</th>
+                            <th class="border-top-0">Status</th>
+                            <th class="border-top-0">Start Date</th>
+                            <th class="border-top-0">Finish Date</th>
+                            <th class="border-top-0">Winner</th>
+                            <th class="border-top-0">Price</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Deshmukh</td>
-                            <td>Prohaska</td>
-                            <td>Genelia</td>
-                            <td>admin</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Deshmukh</td>
-                            <td>Gaylord</td>
-                            <td>Ritesh</td>
-                            <td>member</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Sanghani</td>
-                            <td>Gusikowski</td>
-                            <td>Govinda</td>
-                            <td>developer</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Roshan</td>
-                            <td>Rogahn</td>
-                            <td>Hritik</td>
-                            <td>supporter</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Joshi</td>
-                            <td>Hickle</td>
-                            <td>Maruti</td>
-                            <td>member</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nigam</td>
-                            <td>Eichmann</td>
-                            <td>Sonu</td>
-                            <td>supporter</td>
-                        </tr>
+                        @foreach (var match in Model.MatchesByFilter)
+                        {
+                            var matchTitle = match.Teams.Count > 1
+                                ? match.Teams.Count > 2
+                                    ? $"({match.Teams[0].TeamName}, {match.Teams[1].TeamName} and {match.Teams.Count - 2} more)"
+                                    : $"({match.Teams[0].TeamName} vs {match.Teams[1].TeamName})"
+                                : "";
+
+                            var matchStatus = match.StartDate < DateTime.UtcNow
+                                ? match.FinishDate is null
+                                    ? "ONGOING"
+                                    : "FINISHED"
+                                : "UPCOMING";
+
+                            var matchWinner = match.Teams.Count > 0
+                                ? match.Teams.MinBy(i => i.TakenPlace)
+                                : null;
+
+                            <tr>
+                                <td>@(counter++)</td>
+                                <td class="txt-oflo">
+                                    @match.GameName |
+                                    @{
+                                        if (match.Teams.Count < 2)
+                                        {
+                                            return;
+                                        }
+
+                                        if (match.Teams.Count == 2)
+                                        {
+                                            <span>
+                                                <a
+                                                    target="_blank"
+                                                    asp-controller="Team"
+                                                    asp-action="Index"
+                                                    asp-route-teamId=@match.Teams[0].TeamId>
+                                                    @match.Teams[0].TeamName
+                                                </a>
+                                                vs
+                                                <a
+                                                    target="_blank"
+                                                    asp-controller="Team"
+                                                    asp-action="Index"
+                                                    asp-route-teamId=@match.Teams[1].TeamId>
+                                                    @match.Teams[1].TeamName
+                                                </a>
+                                            </span>
+                                        }
+
+                                        if (match.Teams.Count > 2)
+                                        {
+                                            <span>
+                                                <a
+                                                    style="margin-left: 0;"
+                                                    asp-controller="Team"
+                                                    asp-action="Index"
+                                                    asp-route-teamId=@match.Teams[0].TeamId>
+                                                    @match.Teams[0].TeamName
+                                                </a>,
+                                                <a
+                                                    asp-controller="Team"
+                                                    asp-action="Index"
+                                                    asp-route-teamId=@match.Teams[1].TeamId>
+                                                    @match.Teams[1].TeamName
+                                                </a>
+                                                and @(match.Teams.Count - 2) more
+                                            </span>
+                                        }
+                                    }
+                                </td>
+                                <td>@matchStatus</td>
+                                <td>@match.StartDate</td>
+                                <td>@(match.FinishDate is null ? "null" : match.FinishDate)</td>
+                                <td>
+                                    @{
+                                        if (!matchStatus.Equals("FINISHED"))
+                                        {
+                                            <span>Not known yet..</span>
+                                        }
+                                        else if (matchWinner is null)
+                                        {
+                                            <span>null</span>
+                                        }
+                                        else
+                                        {
+                                            <a
+                                                target="_blank"
+                                                asp-controller="Team"
+                                                asp-action="Index"
+                                                asp-route-teamId=@matchWinner.TeamId>
+                                                @matchWinner.TeamName
+                                            </a>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    <span class="text-success">$@match.Prize</span>
+                                </td>
+                            </tr>
+                        }
                         </tbody>
                     </table>
                 </div>
