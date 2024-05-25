@@ -29,16 +29,23 @@ public class UserEditCommandHandler : IRequestHandler<UserEditCommand>
 
         if (userFromDb is null)
             throw new BadUserException("User not found");
-        
+
         if (!string.IsNullOrWhiteSpace(props.FirstName))
             userFromDb.UserInfo.FirstName = props.FirstName;
 
         if (!string.IsNullOrWhiteSpace(props.LastName))
             userFromDb.UserInfo.LastName = props.LastName;
-        
+
         if (!string.IsNullOrWhiteSpace(props.Nickname))
-            userFromDb.UserInfo.NickName = props.Nickname;
-        
+        {
+            var userWithThisNickname = await _dbContext.Users
+                .FirstOrDefaultAsync(i => i.UserInfo.NickName != null && i.UserInfo.NickName.Equals(props.Nickname),
+                    cancellationToken);
+
+            if (userWithThisNickname is not null && userWithThisNickname.Id != props.UserId)
+                throw new BadUserException("This nickname is already used!");
+        }
+
         if (!string.IsNullOrWhiteSpace(props.Image))
             userFromDb.UserInfo.ImageUrl = props.Image;
 
@@ -52,7 +59,7 @@ public class UserEditCommandHandler : IRequestHandler<UserEditCommand>
 
             if (userFromDb.Id == new Guid(currentUserIdClaim.Value))
                 throw new BadUserException("You can't ban yourself!");
-            
+
             userFromDb.UserInfo.IsBanned = props.IsBanned.Value;
         }
 

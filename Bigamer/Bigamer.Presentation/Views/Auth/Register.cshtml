@@ -183,10 +183,6 @@ document.getElementById('register-submit')
             })
         })
         .then(response => {
-            if (response.status === 500) {
-                alert('Something went wrong! Please try again')
-                return
-            }
             if (response.status !== 200) {
                 response.json()
                 .then(json => alert(json.message))

@@ -145,7 +145,8 @@ document.getElementById('update-submit')
         })
         .then(response => {
             if (response.status !== 200) {
-                alert('Something went wrong!')
+                response.json()
+                    .then(json => alert(json.message))
             }
             else {
                 alert('Successfully updated!')
