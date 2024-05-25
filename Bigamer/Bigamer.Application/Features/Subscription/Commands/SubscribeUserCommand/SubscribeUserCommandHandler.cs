@@ -28,6 +28,9 @@ public class SubscribeUserCommandHandler : IRequestHandler<SubscribeUserCommand>
     {
         var props = request.Props;
         var isNew = false;
+        
+        var currentUserIdClaim = _signInManager.Context.User.Claims
+            .FirstOrDefault(i => i.Type.Equals(ClaimTypes.NameIdentifier));
 
         if (string.IsNullOrWhiteSpace(props.Email))
             throw new ArgumentException("Wrong email!");
@@ -35,6 +38,15 @@ public class SubscribeUserCommandHandler : IRequestHandler<SubscribeUserCommand>
         if (string.IsNullOrWhiteSpace(props.Name))
             throw new ArgumentException("Wrong name!");
 
+        if (currentUserIdClaim is not null)
+        {
+            var currentUserSubscriber = await _dbContext.Subscribers
+                .FirstOrDefaultAsync(i =>
+                    i.UserId.Equals(new Guid(currentUserIdClaim.Value)), cancellationToken);
+
+            if (currentUserSubscriber is not null)
+                _dbContext.Subscribers.Remove(currentUserSubscriber);
+        }        
         var subscriberFromDb = await _dbContext.Subscribers
             .FirstOrDefaultAsync(i => i.Email.Equals(props.Email), cancellationToken);
 
@@ -57,9 +69,6 @@ public class SubscribeUserCommandHandler : IRequestHandler<SubscribeUserCommand>
             };
             isNew = true;
         }
-
-        var currentUserIdClaim = _signInManager.Context.User.Claims
-            .FirstOrDefault(i => i.Type.Equals(ClaimTypes.NameIdentifier));
 
         var newConfirmationCode = _confirmationCodeGenerator.GenerateCode(6);
 

@@ -49,6 +49,14 @@
                 </div>
                 <div class="form-group">
                     <input
+                        id="nickname"
+                        type="text"
+                        placeholder="Nickname"
+                        name="nickname"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input
                         id="email"
                         type="text"
                         placeholder="Email"
@@ -74,6 +82,11 @@
                         name="confirmPassword"
                         required>
                 </div>
+                <label for="is-player">Are you a player?</label>
+                <input
+                    id="is-player"
+                    name="is-player"
+                    type="checkbox">
                 <div class="form-group">
                     <button id="register-submit" type="button" class="d-block default-button">
                         <span>Get Started Now</span>
@@ -112,9 +125,11 @@ document.getElementById('register-submit')
     .addEventListener('click', () => {
         let firstNameInput = document.getElementById('first-name')
         let lastNameInput = document.getElementById('last-name')
+        let nicknameInput = document.getElementById('nickname')
         let emailInput = document.getElementById('email')
         let passwordInput = document.getElementById('password')
         let passwordConfirmInput = document.getElementById('password-confirm')
+        let isPlayerInput = document.getElementById('is-player')
        
         if (firstNameInput.value === '') {
             alert("Write your first name!")    
@@ -123,6 +138,11 @@ document.getElementById('register-submit')
         
         if (lastNameInput.value === '') {
             alert("Write your last name!")    
+            return
+        }
+        
+        if (lastNameInput.value === '') {
+            alert("Write your nickname!")    
             return
         }
         
@@ -142,7 +162,7 @@ document.getElementById('register-submit')
         }
         
         if (passwordInput.value !== passwordConfirmInput.value) {
-            alert("Paswords don't match!")    
+            alert("Passwords don't match!")    
             return
         }
        
@@ -155,19 +175,25 @@ document.getElementById('register-submit')
             body: JSON.stringify({
                 firstName: firstNameInput.value,
                 lastName: lastNameInput.value,
+                nickname: nicknameInput.value,
                 email: emailInput.value,
                 password: passwordInput.value,
-                confirmPassword: passwordConfirmInput.value
+                confirmPassword: passwordConfirmInput.value,
+                isPlayer: isPlayerInput.checked
             })
         })
         .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
             if (response.status !== 200) {
                 response.json()
                 .then(json => alert(json.message))
             }
             else {
                 alert('Successfully registered!')
-                document.location.reload()
+                document.location = 'http://localhost:5002/Auth/Login'
             }
         })
         

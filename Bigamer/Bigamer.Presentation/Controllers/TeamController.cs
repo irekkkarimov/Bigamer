@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bigamer.Presentation.Controllers;
 
-[Authorize]
+// [Authorize]
 public class TeamController : Controller
 {
     private readonly IMediator _mediator;
@@ -35,7 +35,7 @@ public class TeamController : Controller
         return View(response);
     }
 
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [Route("api/[controller]/[action]")]
     public async Task<IActionResult> AddAsync([FromBody] TeamAddRequest request)
@@ -46,7 +46,7 @@ public class TeamController : Controller
         return Ok();
     }
     
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [Route("api/[controller]/[action]")]
     public async Task<IActionResult> AddPlayerAsync([FromBody] TeamAddPlayerRequest request)

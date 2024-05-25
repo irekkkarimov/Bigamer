@@ -40,6 +40,7 @@ public class TeamAddCommandHandler : IRequestHandler<TeamAddCommand>
         {
             Id = Guid.NewGuid(),
             Team = newTeam,
+            ImageUrl = props.Image,
             WinsCount = 0,
             LosesCount = 0,
             DrawsCount = 0,

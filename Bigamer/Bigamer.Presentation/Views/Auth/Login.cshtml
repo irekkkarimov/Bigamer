@@ -28,12 +28,12 @@
     <div class=" container">
         <div class="account-wrapper">
             <h3 class="title">Login</h3>
-            <form asp-action="Login" method="post" class="account-form">
+            <form class="account-form">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" asp-for="Email" name="email">
+                    <input id="email" type="text" placeholder="Email" asp-for="Email" name="email">
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" asp-for="Password" name="password">
+                    <input id="password" type="password" placeholder="Password" asp-for="Password" name="password">
                 </div>
                 <div class="form-group">
                     <div class="d-flex justify-content-between flex-wrap pt-sm-2">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="d-block default-button">
+                    <button id="login-submit" type="button" class="d-block default-button">
                         <span>Submit Now</span>
                     </button>
                 </div>
@@ -77,4 +77,48 @@
         </div>
     </div>
 </div>
-<!-- Login Section Section Ends Here -->
+<script>
+document.getElementById('login-submit')
+    .addEventListener('click', () => {
+        let emailInput = document.getElementById('email')
+        let passwordInput = document.getElementById('password')
+        let rememberMeInput = document.getElementById('remember')
+       
+        if (emailInput.value === '') {
+            alert("Write your email!")    
+            return
+        }
+        
+        if (passwordInput.value === '') {
+            alert("Write password!")    
+            return
+        }
+       
+        fetch('http://localhost:5002/Auth/Login', {
+            method: 'POST',
+            headers: {
+                  "Content-Type": "application/json"
+                },
+            body: JSON.stringify({
+                email: emailInput.value,
+                password: passwordInput.value,
+                rememberMe: rememberMeInput.checked
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully logged in!')
+                document.location = 'http://localhost:5002/Home/Index'
+            }
+        })
+        
+    })
+</script>

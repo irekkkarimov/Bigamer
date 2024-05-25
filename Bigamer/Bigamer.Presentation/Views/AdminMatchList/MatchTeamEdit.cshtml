@@ -1,0 +1,87 @@
+@model Bigamer.Application.Requests.Team.Queries.MatchGetForStatEditRequest.MatchGetForStatEditResponse
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div>
+    <form style="padding: 50px;">
+        <input id="match-id" type="text" value="@Model.MatchId" hidden>
+        <div class="mb3">
+            <label for="team-id" class="form-label">Team Id</label>
+            <input
+                id="team-id"
+                type="text"
+                value="@Model.TeamId"
+                class="form-control"
+                style="margin-bottom: 10px;"
+                disabled>
+        </div>
+        <div class="mb-3">
+            <label for="taken-place" class="form-label">Current Place</label>
+            <input
+                type="text"
+                placeholder="@Model.TakenPlace"
+                value="@Model.TakenPlace"
+                class="form-control"
+                id="taken-place"
+                aria-describedby="emailHelp"
+                disabled>
+        </div>
+        <div class="mb-3">
+            <label for="score" class="form-label">Current Score</label>
+            <input
+                type="text"
+                placeholder="@Model.Score"
+                value="@Model.Score"
+                class="form-control"
+                id="score"
+                aria-describedby="emailHelp">
+        </div>
+        <button id="update-match-team-submit" type="button" class="btn btn-primary">Save</button>
+    </form>
+</div>
+<script>
+document.getElementById('update-match-team-submit')
+    .addEventListener('click', () => {
+        let teamId = document.getElementById('team-id').value
+        let matchId = document.getElementById('match-id').value
+        let scoreInput = document.getElementById('score')
+       
+        if (scoreInput.value === scoreInput.placeholder) {
+            alert('All values equal to old!')
+            return    
+        }
+       
+        if (scoreInput.value < 0) {
+            alert("Score cant be a negative number!")    
+            return
+        }
+        
+        fetch('http://localhost:5002/Admin/Teams/UpdateStat/' + matchId, {
+            method: 'PATCH',
+            headers: {
+                  "Content-Type": "application/json"
+                },
+            body: JSON.stringify({
+                teamId: teamId,
+                score: scoreInput.value
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully updated!')
+                document.location = 'http://localhost:5002/Admin/Matches/Edit/' + matchId
+            }
+        })
+        
+    })
+</script>

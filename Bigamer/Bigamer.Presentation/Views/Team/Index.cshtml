@@ -9,7 +9,7 @@
     <div class="container">
         <div class="section-wrapper text-center text-uppercase">
             <div class="pageheader-thumb mb-4">
-                <img style="width: 220px;" src="../../@Model.ImageUrl" alt="team">
+                <img style="width: 220px;" src="@Model.ImageUrl" alt="team">
             </div>
             <h2 class="pageheader-title">@Model.Name</h2>
         </div>
@@ -68,10 +68,10 @@
                         : $" \"{player.Nickname}\" ";
                     
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <div class="player-item">
-                            <div class="player-inner">
+                        <div style="height: 412px;" class="player-item">
+                            <div style="height: 412px" class="player-inner">
                                 <div class="player-thumb">
-                                    <img src=@player.ImageUrl alt="player-img">
+                                    <img src=@player.ImageUrl alt="@player.Nickname">
                                 </div>
                                 <div class="player-content text-center">
                                     <div class="player-info-list">

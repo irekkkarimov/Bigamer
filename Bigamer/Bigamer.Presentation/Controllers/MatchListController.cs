@@ -21,7 +21,7 @@ public class MatchListController : Controller
     public async Task<IActionResult> Index(
         [FromQuery] string? filter, 
         [FromQuery] int offset = 0,
-        [FromQuery] int limit = 1)
+        [FromQuery] int limit = 5)
     {
         var getAllMatchesQuery = new MatchGetAllQuery(new MatchGetAllRequest
         {

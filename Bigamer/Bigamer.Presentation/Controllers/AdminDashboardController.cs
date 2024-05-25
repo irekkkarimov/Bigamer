@@ -26,7 +26,7 @@ public class AdminDashboardController : Controller
 
         var getRecentMatchesQuery = new MatchGetRecentQuery(new MatchGetRecentRequest
         {
-            MatchCount = 10
+            MatchCount = 7
         });
         var getRecentMatchesResponse = await _mediator.Send(getRecentMatchesQuery);
         

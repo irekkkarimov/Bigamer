@@ -1,0 +1,165 @@
+@model Bigamer.Application.DTOs.Admin.AdminMatchAddModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div>
+    <form style="padding: 50px;">
+        <div class="mb-3">
+            <label for="game"
+                   class="form-label">
+                Choose game
+            </label>
+            <select
+                name="game"
+                id="game"
+                class="form-control">
+                @foreach (var game in Model.Games.Games)
+                {
+                    <option value="@game.GameId">
+                        @game.GameName
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label
+                for="prize"
+                class="form-label">
+                Match Prize ($)
+            </label>
+            <input
+                id="prize"
+                class="form-control"
+                type="number">
+        </div>
+        <div class="mb-3">
+            <label
+                for="start-date"
+                class="form-label">
+                Choose match start date
+            </label>
+            <input
+                id="start-date"
+                class="form-control"
+                type="datetime-local">
+        </div>
+        <div class="mb-3">
+            <label
+                for="finish-date"
+                class="form-label">
+                Choose match end date (If already finished)
+            </label>
+            <input
+                id="finish-date"
+                class="form-control"
+                type="datetime-local">
+        </div>
+        <div class="mb-3">
+            <label
+                for="first-team"
+                class="form-label">
+                First team id
+            </label>
+            <input
+                id="first-team"
+                class="form-control"
+                type="text">
+        </div>
+        <div class="mb-3">
+            <label
+                for="second-team"
+                class="form-label">
+                Second team id
+            </label>
+            <input
+                id="second-team"
+                class="form-control"
+                type="text">
+        </div>
+        <div class="mb-3">
+            <label
+                for="other-teams"
+                class="form-label">
+                Other teams (If adding multiple, divide them with space between id's)
+            </label>
+            <input
+                id="other-teams"
+                class="form-control"
+                type="text">
+        </div>
+        <p><b>You can add match links later</b></p>
+        <button id="add-match-submit" type="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script>
+document.getElementById('add-match-submit')
+    .addEventListener('click', () => {
+        let gameIdInput = document.getElementById('game')
+        let prizeInput = document.getElementById('prize')
+        let startDateInput = document.getElementById('start-date')
+        let finishDateInput = document.getElementById('finish-date')
+        let firstTeamInput = document.getElementById('first-team')
+        let secondTeamInput = document.getElementById('second-team')
+        let otherTeamsInput = document.getElementById('other-teams')
+        
+        if (prizeInput.value < 0) {
+            alert('Prize can not be negative number!')
+        }
+        
+        if (startDateInput.value === '') {
+            alert('Choose start date!')
+            return
+        }
+        
+        if (firstTeamInput.value === '' || secondTeamInput.value === '') {
+            alert('Minimum two teams should participate!')
+            return
+        }
+        
+        let otherTeamsInputFormatted = otherTeamsInput.value.trim().split(' ')
+        .filter(i => i !== '')
+        
+        let teamsToSubmit = 
+            [firstTeamInput.value.trim(), secondTeamInput.value.trim(), ...otherTeamsInputFormatted]
+            
+        let teamsToSubmitObjects = []
+        
+        teamsToSubmit.forEach(i => {
+            teamsToSubmitObjects.push({
+                teamId: i
+            })
+        })
+            
+        console.log(1)
+        fetch('http://localhost:5002/api/Match/Add', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                gameId: gameIdInput.value,
+                startDate: startDateInput.value,
+                finishDate: finishDateInput.value !== '' ? finishDateInput.value : null, 
+                prize: prizeInput.value,
+                teams: teamsToSubmitObjects,
+                links: []
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully added!')
+                document.location = 'http://localhost:5002/Admin/Matches'
+            }
+        })
+    })
+</script>

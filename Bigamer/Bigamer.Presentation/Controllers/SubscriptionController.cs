@@ -18,7 +18,7 @@ public class SubscriptionController : Controller
     }
 
     [HttpPost]
-    public async Task SubscribeAsync([FromForm] SubscribeUserRequest request)
+    public async Task SubscribeAsync([FromBody] SubscribeUserRequest request)
     {
         var command = new SubscribeUserCommand(request);
         await _mediator.Send(command);

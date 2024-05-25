@@ -18,7 +18,6 @@ public class MatchController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Add([FromBody] MatchAddRequest request)
     {
-        Console.WriteLine(request is null);
         var command = new MatchAddCommand(request);
         await _mediator.Send(command);
 

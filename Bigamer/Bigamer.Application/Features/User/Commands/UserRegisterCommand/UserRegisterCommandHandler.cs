@@ -5,6 +5,7 @@ using Bigamer.Application.Interfaces;
 using Bigamer.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bigamer.Application.Features.User.Commands.UserRegisterCommand;
 
@@ -23,15 +24,27 @@ public partial class UserRegisterCommandHandler : IRequestHandler<UserRegisterCo
     public async Task Handle(UserRegisterCommand request, CancellationToken cancellationToken)
     {
         var props = request.Props;
-        Console.WriteLine(JsonSerializer.Serialize(props));
+       
+        if (!_emailRegex.IsMatch(props.Email))
+            throw new UserValidationException("Wrong email format");
+
+        var tryFindUser = await _userManager.FindByEmailAsync(props.Email);
+
+        if (tryFindUser is not null)
+            throw new BadUserException("User with this email exists");
+        
+        if (string.IsNullOrWhiteSpace(props.Nickname))
+            throw new UserValidationException("Wrong nickname");
+        
+        if (await _dbContext.UserInfos
+                .AnyAsync(i => i.NickName == props.Nickname, cancellationToken: cancellationToken))
+            throw new BadUserException("User with this nickname exists");
+        
         if (string.IsNullOrWhiteSpace(props.FirstName))
             throw new UserValidationException("Wrong first name");
 
         if (string.IsNullOrWhiteSpace(props.LastName))
             throw new UserValidationException("Wrong last name");
-        
-        if (!_emailRegex.IsMatch(props.Email))
-            throw new UserValidationException("Wrong email format");
 
         if (string.IsNullOrWhiteSpace(props.Password) || string.IsNullOrWhiteSpace(props.ConfirmPassword))
             throw new UserValidationException("Password is empty");
@@ -52,6 +65,11 @@ public partial class UserRegisterCommandHandler : IRequestHandler<UserRegisterCo
         if (!result.Succeeded)
             throw new BadUserException(result.Errors.FirstOrDefault()?.Description 
                                               ?? "Registration was not successful");
+
+        if (props.IsPlayer)
+            await _userManager.AddToRoleAsync(newUser, "player");
+        else
+            await _userManager.AddToRoleAsync(newUser, "user");
         
         var newUserInfo = new UserInfo
         {
@@ -60,7 +78,7 @@ public partial class UserRegisterCommandHandler : IRequestHandler<UserRegisterCo
             Team = null,
             FirstName = props.FirstName,
             LastName = props.LastName,
-            NickName = null,
+            NickName = props.Nickname,
             IsBanned = false,
             ImageUrl = null
         };

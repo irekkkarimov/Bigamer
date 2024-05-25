@@ -1,3 +1,17 @@
+@using Microsoft.AspNetCore.Identity
+@using Bigamer.Domain.Entities
+@using System.Security.Claims
+@inject SignInManager<User> SignInManager
+
+@{
+    var userEmailClaim = SignInManager.Context.User.Claims
+        .FirstOrDefault(i => i.Type.Equals(ClaimTypes.Email));
+
+    var adminEmailToShow = userEmailClaim is null
+        ? "Admin"
+        : userEmailClaim.Value;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +84,7 @@
                     <li>
                         <a class="profile-pic" asp-controller="AdminProfile" asp-action="Index">
                             <img src="~/adminAssets/plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                 class="img-circle"><span class="text-white font-medium">Steave</span>
+                                 class="img-circle"><span class="text-white font-medium">@adminEmailToShow</span>
                         </a>
                     </li>
                     <!-- ============================================================== -->

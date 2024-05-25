@@ -25,7 +25,7 @@ public class AuthController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login([FromForm] UserLoginRequest request)
+    public async Task<IActionResult> Login([FromBody] UserLoginRequest request)
     {
         var command = new UserLoginCommand(request);
         await _mediator.Send(command);
@@ -45,7 +45,7 @@ public class AuthController : Controller
         var command = new UserRegisterCommand(request);
         await _mediator.Send(command);
 
-        return RedirectToAction("Login");
+        return Ok();
     }
 
     [HttpPost]
@@ -54,6 +54,6 @@ public class AuthController : Controller
         var command = new UserLogoutCommand();
         await _mediator.Send(command);
 
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Login");
     }
 }

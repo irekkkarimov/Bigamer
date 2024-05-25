@@ -45,23 +45,31 @@
                             <th class="border-top-0">#</th>
                             <th class="border-top-0">First Name</th>
                             <th class="border-top-0">Last Name</th>
-                            <th class="border-top-0">Username</th>
+                            <th class="border-top-0">Nickname</th>
                             <th class="border-top-0">Role</th>
                             <th class="border-top-0">TeamName</th>
                             <th class="border-top-0">IsBanned</th>
+                            <th class="border-top-0">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach (var user in Model.Users)
                         {
-                            <tr>
+                            <tr id="@user.UserId">
                                 <td>@userCounter</td>
                                 <td>@user.FirstName</td>
                                 <td>@user.LastName</td>
-                                <td>@user.Username</td>
+                                <td>@(user.Nickname ?? "null")</td>
                                 <td>@user.Role</td>
                                 <td>@(user.TeamName ?? "null")</td>
                                 <td>@(user.IsBanned ? "Yes" : "No")</td>
+                                <td>
+                                    <a
+                                        asp-action="UserEdit"
+                                        asp-route-userId="@user.UserId"
+                                        class="open-modal"
+                                        style="border: none">Edit</a>
+                                </td>
                             </tr>
 
                             userCounter++;

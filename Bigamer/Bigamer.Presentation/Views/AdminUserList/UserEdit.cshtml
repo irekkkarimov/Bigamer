@@ -1,0 +1,137 @@
+@model Bigamer.Application.Requests.User.Queries.UserGetAllRequest.UserGetAllResponseItem
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div>
+    <form style="padding: 50px;">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+                type="email"
+                placeholder="@Model.Email"
+                value="@Model.Email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                disabled>
+        </div>
+        <div class="mb-3">
+            <label for="nickname" class="form-label">Nickname</label>
+            <input
+                type="text"
+                placeholder="@Model.Nickname"
+                value="@Model.Nickname"
+                class="form-control"
+                id="nickname"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="first-name" class="form-label">First name</label>
+            <input
+                type="text"
+                placeholder="@Model.FirstName"
+                value="@Model.FirstName"
+                class="form-control"
+                id="first-name"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="last-name" class="form-label">Last name</label>
+            <input
+                type="text"
+                placeholder="@Model.LastName"
+                value="@Model.LastName"
+                class="form-control"
+                id="last-name"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Url</label>
+            <input
+                type="text"
+                placeholder="@Model.ImageUrl"
+                value="@Model.ImageUrl"
+                class="form-control"
+                id="image"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 form-check">
+            <input
+                type="checkbox"
+                placeholder="@(Model.IsBanned ? 1 : 0)"
+                checked="@Model.IsBanned"
+                class="form-check-input"
+                id="is-banned">
+            <label class="form-check-label" for="is-banned">Is banned</label>
+        </div>
+        <button id="update-user-submit" type="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script>
+document.getElementById('update-user-submit')
+    .addEventListener('click', () => {
+        let firstNameInput = document.getElementById('first-name')
+        let lastNameInput = document.getElementById('last-name')
+        let nicknameInput = document.getElementById('nickname')
+        let imageInput = document.getElementById('image')
+        let isBannedInput = document.getElementById('is-banned')
+       
+        console.log(isBannedInput.placeholder === '1')
+        console.log(isBannedInput.checked)
+       
+        let isBannedOld = isBannedInput.placeholder === '1'
+       
+        if (firstNameInput.value === firstNameInput.placeholder
+        && lastNameInput.value === lastNameInput.placeholder
+        && nicknameInput.value === nicknameInput.placeholder
+        && imageInput.value === imageInput.placeholder
+        && isBannedInput.checked === isBannedOld) {
+            alert("All values equal to old!")  
+            return  
+             
+        }
+        
+        if (firstNameInput.value === ''
+        && lastNameInput.value === ''
+        && nicknameInput.value === ''
+        && imageInput.value === ''
+        && isBannedInput.checked === isBannedOld) {
+            alert("Fill the fields!")    
+            return
+        }
+       
+        let pathSplit = location.pathname.split('/')
+        let userId = pathSplit[pathSplit.length - 1]
+        
+        fetch('http://localhost:5002/Admin/Users/Update/' + userId, {
+            method: 'PATCH',
+            headers: {
+                  "Content-Type": "application/json"
+                },
+            body: JSON.stringify({
+                firstName: firstNameInput.value,
+                lastName: lastNameInput.value,
+                nickname: nicknameInput.value,
+                image: imageInput.value,
+                isBanned: isBannedInput.checked
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully updated!')
+                document.location.reload()
+            }
+        })
+        
+    })
+</script>

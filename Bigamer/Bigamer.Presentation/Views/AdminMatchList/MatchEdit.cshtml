@@ -1,0 +1,387 @@
+@using Bigamer.Shared.Enums
+@model Bigamer.Application.Requests.Match.Queries.MatchGetForEditRequest.MatchGetForEditResponse
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div>
+    <form style="padding: 50px;">
+        <input id="match-id" type="text" value="@Model.MatchId" hidden>
+        <div class="mb-3">
+            <label for="first-name" class="form-label">Game</label>
+            <input
+                type="text"
+                placeholder="@Model.GameName"
+                value="@Model.GameName"
+                class="form-control"
+                id="first-name"
+                aria-describedby="emailHelp"
+                disabled>
+        </div>
+        <div class="mb-3">
+            <label
+                for="prize"
+                class="form-label">
+                Match Prize ($)
+            </label>
+            <input
+                id="prize"
+                placeholder="@Model.Prize"
+                value="@Model.Prize"
+                class="form-control"
+                type="number">
+        </div>
+        <div class="mb-3">
+            <label
+                for="start-date"
+                class="form-label">
+                Choose match start date
+            </label>
+            <p style="margin: 0;">Old date:</p>
+            <p>
+                <b>@Model.StartDate!.Value.ToString("dd/MM/yyyy hh:mm tt")</b>
+            </p>
+            <input
+                id="start-date"
+                class="form-control"
+                type="datetime-local">
+        </div>
+        <div class="mb-3">
+            <label
+                for="finish-date"
+                class="form-label">
+                Choose match end date (If already finished)
+            </label>
+            @if (Model.FinishDate is not null)
+            {
+                <p style="margin: 0;">Old date:</p>
+                <p>
+                    <b>@Model.FinishDate.Value.ToString("dd/MM/yyyy hh:mm tt")</b>
+                </p>
+            }
+            <input
+                id="finish-date"
+                placeholder="@Model.FinishDate"
+                class="form-control"
+                type="datetime-local">
+        </div>
+        <div class="mb-3">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <p for="last-name" class="form-label" style="margin-right: 5px;">Match links</p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#match-link-add-modal">Add</button>
+            </div>
+            <div style="display: flex;">
+                @foreach (var link in Model.Links)
+                {
+                    <div style="border: 1px solid black; padding: 10px; margin-right: 10px;">
+                        <p>@link.ServiceName</p>
+                        <p>@link.Link</p>
+                        <button type="button" onclick="removeMatchLink('@link.ServiceName.ToString()')">Delete</button>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="mb-3">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <p for="last-name" class="form-label" style="margin-right: 5px;">Teams</p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#match-team-add-modal">Add</button>
+            </div>
+            <div style="display: flex;">
+                @foreach (var team in Model.Teams)
+                {
+                    <div style="border: 1px solid black; padding: 10px; margin-right: 10px;">
+                        <p>@team.TeamName</p>
+                        <p>@team.TakenPlace</p>
+                        <a
+                            asp-action="MatchTeamEdit"
+                            asp-route-matchId="@Model.MatchId"
+                            asp-route-teamId="@team.TeamId">
+                            Edit
+                        </a>
+                        <button type="button" onclick="removeMatchTeam('@team.TeamId')">Remove</button>
+                    </div>
+                }
+            </div>
+        </div>
+        <button id="update-match-submit" type="button" class="btn btn-primary">Submit</button>
+        <button id="delete-match-submit" type="button" class="btn btn-primary">Delete</button>
+    </form>
+</div>
+
+<!-- Link Add Modal -->
+<div class="modal fade" id="match-link-add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="link-add-label">Adding new link</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="link-type" class="form-label">
+                            Choose link type
+                        </label>
+                        <select name="link-type" id="link-type">
+                            @foreach (var linkType in (LinkType[])Enum.GetValues(typeof(LinkType)))
+                            {
+                                <option value="@linkType">@linkType</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="link-type" class="form-label">
+                            Write link url
+                        </label>
+                        <input
+                            id="link-url"
+                            type="text">
+                    </div>
+                    <button id="add-match-link-submit" type="button" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Player Add Modal -->
+<div class="modal fade" id="match-team-add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="player-add-modal-label">Adding team to match</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="team-id" class="form-label">
+                            Write team id
+                        </label>
+                        <input
+                            id="team-id"
+                            type="text">
+                    </div>
+                    <button id="add-match-team-submit" type="button" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+document.getElementById('update-match-submit')
+    .addEventListener('click', () => {
+        let matchId = document.getElementById('match-id').value
+        let prizeInput = document.getElementById('prize')
+        let startDateInput = document.getElementById('start-date')
+        let finishDateInput = document.getElementById('finish-date')
+        
+        if (prizeInput.value === prizeInput.placeholder
+            && startDateInput.value === ''  
+            && finishDateInput.value === '') {
+                alert('You didnt change anything!')
+                return
+            }
+        
+        if (prizeInput.value === prizeInput.placeholder
+        && startDateInput.value === startDateInput.placeholder
+        && finishDateInput.value === finishDateInput.placeholder) {
+            alert('You didnt change anything!')
+            return
+        }
+
+        
+        if (prizeInput.value < 0) {
+            alert('Prize can not be negative number!')
+        }
+            
+        console.log(1)
+        fetch('http://localhost:5002/Admin/Matches/Update/' + matchId, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                startDate: startDateInput.value !== '' ? startDateInput.value : null,
+                finishDate: finishDateInput.value !== '' ? finishDateInput.value : null, 
+                prize: prizeInput.value
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully updated!')
+                document.location.reload()
+            }
+        })
+    })
+    
+function removeMatchLink(linkType) {
+    let matchId = document.getElementById('match-id').value
+    console.log(1)
+    fetch('http://localhost:5002/Admin/Matches/DeleteLink/' + matchId + '?' + new URLSearchParams({
+          linkType: linkType
+          }), {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.status === 500) {
+            alert('Something went wrong! Please try again')
+            return
+        }
+        if (response.status !== 200) {
+            response.json()
+                .then(json => alert(json.message))
+        }
+        else {
+            alert('Successfully removed!')
+            document.location.reload()
+        }
+    })
+}
+
+function removeMatchTeam(teamId) {
+    let matchId = document.getElementById('match-id').value
+    console.log(1)
+    fetch('http://localhost:5002/Admin/Matches/RemoveTeam/' + matchId + '?' + new URLSearchParams({
+          teamId: teamId
+          }), {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.status === 500) {
+            alert('Something went wrong! Please try again')
+            return
+        }
+        if (response.status !== 200) {
+            response.json()
+                .then(json => alert(json.message))
+        }
+        else {
+            alert('Successfully removed!')
+            document.location.reload()
+        }
+    })
+}
+
+document.getElementById('add-match-link-submit')
+    .addEventListener('click', () => {
+        let matchId = document.getElementById('match-id').value
+        let linkTypeInput = document.getElementById('link-type')
+        let linkUrlInput = document.getElementById('link-url')
+       
+        if (linkTypeInput.value === 'Undefined') {
+            alert('Choose link type!')
+            return
+        }
+        
+        if (linkUrlInput.value === '') {
+            alert('Write link url!')
+            return
+        }
+       
+        fetch('http://localhost:5002/Admin/Matches/AddLink', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                matchId: matchId,
+                serviceName: linkTypeInput.value, 
+                link: linkUrlInput.value
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully added!')
+                document.location.reload()
+            }
+        })
+    })
+    
+document.getElementById('add-match-team-submit')
+    .addEventListener('click', () => {
+        let matchId = document.getElementById('match-id').value
+        let teamIdInput = document.getElementById('team-id')
+        
+        if (teamIdInput.value === '') {
+            alert('Write team id!')
+            return
+        }
+       
+        fetch('http://localhost:5002/Admin/Matches/AddTeam', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                matchId: matchId,
+                teamId: teamIdInput.value 
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully added!')
+                document.location.reload()
+            }
+        })
+    })
+    
+document.getElementById('delete-match-submit')
+    .addEventListener('click', () => {
+        if (!confirm('Are you sure to delete this match?'))
+            return
+        
+        let matchId = document.getElementById('match-id').value
+       
+        fetch('http://localhost:5002/Admin/Matches/Delete/' + matchId, {
+            method: 'Delete'
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully deleted!')
+                document.location = 'http://localhost:5002/Admin/Matches'
+            }
+        })
+    })
+</script>

@@ -18,7 +18,7 @@ public class TeamListController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index([FromQuery] int offset = 0, [FromQuery] int limit = 2)
+    public async Task<IActionResult> Index([FromQuery] int offset = 0, [FromQuery] int limit = 6)
     {
         var query = new TeamGetAllQuery(new TeamGetAllRequest
         {

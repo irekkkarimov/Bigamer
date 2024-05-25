@@ -128,6 +128,9 @@ public class AutoMapperProfile : Profile
             .ForMember(i => i.TeamId,
                 i =>
                     i.MapFrom(e => e.Id))
+            .ForMember(i => i.TeamName,
+                i =>
+                    i.MapFrom(e => e.Name))
             .ForMember(i => i.ImageUrl,
                 i =>
                     i.MapFrom(e => e.TeamInfo.ImageUrl))
@@ -179,15 +182,24 @@ public class AutoMapperProfile : Profile
         
         // USER GET
         CreateMap<User, UserGetAllResponseItem>()
+            .ForMember(i => i.UserId,
+                i =>
+                    i.MapFrom(e => e.Id))
+            .ForMember(i => i.Email,
+                i =>
+                    i.MapFrom(e => e.Email))
             .ForMember(i => i.FirstName,
                 i =>
                     i.MapFrom(e => e.UserInfo.FirstName))
             .ForMember(i => i.LastName,
                 i =>
                     i.MapFrom(e => e.UserInfo.LastName))
-            .ForMember(i => i.Username,
+            .ForMember(i => i.Nickname,
                 i =>
-                    i.MapFrom(e => e.UserName))
+                    i.MapFrom(e => e.UserInfo.NickName))
+            .ForMember(i => i.ImageUrl,
+                i =>
+                    i.MapFrom(e => e.UserInfo.ImageUrl))
             .ForMember(i => i.TeamName,
                 i =>
                     i.MapFrom(e => e.UserInfo.Team != null ? e.UserInfo.Team.Name : null))

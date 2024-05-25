@@ -4,7 +4,7 @@
 @{
     Layout = Layout;
 
-    Func<int, string> monthByNumber = x => x switch 
+    string MonthByNumber(int x) => x switch 
     {
         1 => "January",
         2 => "February",
@@ -109,7 +109,7 @@
                 {
                     var dateToShow = match.StartDate is null
                         ? ""
-                        : $"{match.StartDate.Value.Day} {monthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
+                        : $"{match.StartDate.Value.Day} {MonthByNumber(match.StartDate.Value.Month)} {match.StartDate.Value.Year}";
 
                     var timeToShow = match.StartDate is null
                         ? ""
@@ -145,13 +145,16 @@
                                                 <div class="match-game-team">
                                                     <ul class="match-team-list d-flex flex-wrap align-items-center justify-content-center">
                                                         <li class="match-team-thumb">
-                                                            <a
-                                                                asp-action="Index"
-                                                                asp-route-teamId="@match.Teams[0].TeamId"
-                                                                asp-controller="Team">
-                                                                <img style="height: 86px;" src="@match.Teams[0].ImageUrl"
-                                                                     alt="team-img">
-                                                            </a>
+                                                            @if (match.Teams.Count > 0)
+                                                            {
+                                                                <a
+                                                                    asp-action="Index"
+                                                                    asp-route-teamId="@match.Teams[0].TeamId"
+                                                                    asp-controller="Team">
+                                                                    <img style="height: 86px;" src="@match.Teams[0].ImageUrl"
+                                                                         alt="team-img">
+                                                                </a>
+                                                            }
                                                         </li >
                                                         <l class="text-center">
                                                             <img
@@ -160,13 +163,16 @@
                                                                 alt="vs">
                                                         </l>
                                                         <li class="match-team-thumb">
-                                                            <a
-                                                                asp-action="Index"
-                                                                asp-route-teamId="@match.Teams[1].TeamId"
-                                                                asp-controller="Team">
-                                                                <img style="height: 86px;" src="../../@match.Teams[1].ImageUrl"
-                                                                     alt="team-img">
-                                                            </a>
+                                                            @if (match.Teams.Count > 1)
+                                                            {
+                                                                <a
+                                                                    asp-action="Index"
+                                                                    asp-route-teamId="@match.Teams[1].TeamId"
+                                                                    asp-controller="Team">
+                                                                    <img style="height: 86px;" src="../../@match.Teams[1].ImageUrl"
+                                                                         alt="team-img">
+                                                                </a>
+                                                            }
                                                         </li >
                                                     </ul>
                                                 </div>
@@ -217,14 +223,17 @@
                                                                 </a>
                                                             </li>
                                                         }
-                                                        <a href="@match.Links[0].Link"
-                                                           class="default-button reverse-effect">
-                                                            <span>
-                                                                Watch Now
-                                                                <i class="icofont-play-alt-1">
-                                                                </i>
-                                                            </span>
-                                                        </a>
+                                                        @if (match.Links.Count > 0)
+                                                        {
+                                                            <a href="@match.Links[0].Link"
+                                                               class="default-button reverse-effect">
+                                                                <span>
+                                                                    Watch Now
+                                                                    <i class="icofont-play-alt-1">
+                                                                    </i>
+                                                                </span>
+                                                            </a>
+                                                        }
                                                     </ul>
                                                 </div>
                                             </div>
@@ -249,13 +258,16 @@
                                         <div class="row align-items-center justify-content-center">
                                             <div class="col-md-2 col-5 p-0">
                                                 <div class="match-team-thumb text-center">
-                                                    <a
-                                                        asp-controller="Team"
-                                                        asp-action="Index"
-                                                        asp-route-teamId=@match.Teams[0].TeamId
-                                                        class="text-center">
-                                                        <img style="height: 100px;" src="@match.Teams[0].ImageUrl"/>
-                                                    </a>
+                                                    @if (match.Teams.Count > 0)
+                                                    {
+                                                        <a
+                                                            asp-controller="Team"
+                                                            asp-action="Index"
+                                                            asp-route-teamId=@match.Teams[0].TeamId
+                                                            class="text-center">
+                                                            <img style="height: 100px;" src="@match.Teams[0].ImageUrl"/>
+                                                        </a>
+                                                    }
                                                 </div>
 
                                             </div>
@@ -264,12 +276,15 @@
                                             </div>
                                             <div class="col-md-2 col-5 order-md-3 p-0">
                                                 <div class="match-team-thumb text-center">
-                                                    <a
-                                                        asp-controller="Team"
-                                                        asp-action="Index"
-                                                        asp-route-teamId=@match.Teams[1].TeamId>
-                                                        <img style="height: 100px;" src="@match.Teams[1].ImageUrl" alt="team-img">
-                                                    </a>
+                                                    @if (match.Teams.Count > 1)
+                                                    {
+                                                        <a
+                                                            asp-controller="Team"
+                                                            asp-action="Index"
+                                                            asp-route-teamId=@match.Teams[1].TeamId>
+                                                            <img style="height: 100px;" src="@match.Teams[1].ImageUrl" alt="team-img">
+                                                        </a>
+                                                    }
                                                 </div>
                                             </div>
                                             <div class="col-md-8 order-md-2 mt-4 mt-md-0">

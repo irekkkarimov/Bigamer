@@ -5,5 +5,4 @@ namespace Bigamer.Application.Features.User.Queries.UserGetInfoQuery;
 
 public class UserGetInfoQuery : IRequest<UserGetInfoResponse>
 {
-    
 }

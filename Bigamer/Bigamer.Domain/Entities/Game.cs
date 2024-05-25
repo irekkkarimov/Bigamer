@@ -7,4 +7,5 @@ public class Game : BaseEntity
     public string Name { get; set; } = null!;
     public List<Team> Teams { get; set; } = new();
     public List<Match> Matches { get; set; } = new();
+    public int MaxTeamCount { get; set; }
 }

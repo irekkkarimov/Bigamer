@@ -1,0 +1,90 @@
+@model Bigamer.Application.DTOs.Admin.AdminMatchAddModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div>
+    <form style="padding: 50px;">
+        <div class="mb-3">
+            <label
+                for="name"
+                class="form-label">
+                Team name
+            </label>
+            <input
+                id="name"
+                class="form-control"
+                type="text">
+        </div>
+        <div class="mb-3">
+            <label for="game"
+                   class="form-label">
+                Choose game
+            </label>
+            <select
+                name="game"
+                id="game"
+                class="form-control">
+                @foreach (var game in Model.Games.Games)
+                {
+                    <option value="@game.GameId">
+                        @game.GameName
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Url</label>
+            <input
+                type="text"
+                class="form-control"
+                id="image"
+                aria-describedby="emailHelp">
+        </div>
+        <p>
+            <b>You can add match links and players later</b>
+        </p>
+        <button id="add-team-submit" type="button" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script>
+document.getElementById('add-team-submit')
+    .addEventListener('click', () => {
+        let gameIdInput = document.getElementById('game')
+        let nameInput = document.getElementById('name')
+        let imageInput = document.getElementById('image')
+        
+        
+        if (nameInput.value === '') {
+            alert('Write team name!')
+            return
+        }
+        
+        fetch('http://localhost:5002/Admin/Teams/Add', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                gameId: gameIdInput.value,
+                name: nameInput.value,
+                image: imageInput.value.trim() !== '' ? imageInput.value : null
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully added!')
+                document.location.reload()
+            }
+        })
+    })
+</script>

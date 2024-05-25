@@ -21,7 +21,18 @@ public class TeamAddLinkCommandHandler : IRequestHandler<TeamAddLinkCommand>
     {
         var props = request.Props;
 
-        if (props.ServiceName is LinkType.Undefined)
+        var linkTypeToAdd = LinkType.Undefined;
+
+        if (props.ServiceName is null)
+            throw new TeamBadRequest("Wrong service name");
+
+        foreach (var linkType in (LinkType[])Enum.GetValues(typeof(LinkType)))
+        {
+            if (linkType.ToString().ToLower().Equals(props.ServiceName.ToLower()))
+                linkTypeToAdd = linkType;
+        }
+
+        if (linkTypeToAdd is LinkType.Undefined)
             throw new BadLinkServiceException($"Service name {LinkType.Undefined.ToString()} not found");
 
         if (string.IsNullOrWhiteSpace(props.Link))
@@ -33,11 +44,16 @@ public class TeamAddLinkCommandHandler : IRequestHandler<TeamAddLinkCommand>
         if (teamFromDb is null)
             throw new TeamBadRequest("Team not found");
 
+        var doesContainThisLink = teamFromDb.TeamLinks.Any(i => i.ServiceName == linkTypeToAdd);
+
+        if (doesContainThisLink)
+            throw new TeamBadRequest("This type of link already added for match");
+        
         var newTeamLink = new TeamLink
         {
             Id = Guid.NewGuid(),
             Team = teamFromDb,
-            ServiceName = props.ServiceName,
+            ServiceName = linkTypeToAdd,
             Link = props.Link
         };
 

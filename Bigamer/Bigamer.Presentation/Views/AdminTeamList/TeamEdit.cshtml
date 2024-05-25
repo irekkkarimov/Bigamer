@@ -1,0 +1,352 @@
+@using Bigamer.Shared.Enums
+@model Bigamer.Application.Requests.Team.Queries.TeamGetForEditRequest.TeamGetForEditResponse
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div>
+    <form style="padding: 50px;">
+        <div class="mb3">
+            <label for="team-id" class="form-label">Team Id</label>
+            <input
+                id="team-id"
+                type="text"
+                value="@Model.TeamId"
+                class="form-control"
+                style="margin-bottom: 10px;"
+                disabled>
+        </div>
+        <div class="mb-3">
+            <label for="first-name" class="form-label">Game</label>
+            <input
+                type="text"
+                placeholder="@Model.GameName"
+                value="@Model.GameName"
+                class="form-control"
+                id="first-name"
+                aria-describedby="emailHelp"
+                disabled>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Team name</label>
+            <input
+                type="text"
+                placeholder="@Model.TeamName"
+                value="@Model.TeamName"
+                class="form-control"
+                id="name"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Url</label>
+            <input
+                type="text"
+                placeholder="@Model.ImageUrl"
+                value="@Model.ImageUrl"
+                class="form-control"
+                id="image"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <p for="last-name" class="form-label" style="margin-right: 5px;">Team links</p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#link-add-modal">Add</button>
+            </div>
+            <div style="display: flex;">
+                @foreach (var link in Model.Links)
+                {
+                    <div style="border: 1px solid black; padding: 10px; margin-right: 10px;">
+                        <p>@link.ServiceName</p>
+                        <p>@link.Link</p>
+                        <button type="button" onclick="removeLink('@link.ServiceName.ToString()')">Delete</button>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="mb-3">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <p for="last-name" class="form-label" style="margin-right: 5px;">Players</p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#player-add-modal">Add</button>
+            </div>
+            <div style="display: flex;">
+                @foreach (var player in Model.Players)
+                {
+                    <div style="border: 1px solid black; padding: 10px; margin-right: 10px;">
+                        <p>@player.Email</p>
+                        <p>@player.Nickname</p>
+                        <button type="button" onclick="removePlayer('@player.UserId')">Remove</button>
+                    </div>
+                }
+            </div>
+        </div>
+        <button id="update-team-submit" type="button" class="btn btn-primary">Submit</button>
+        <button id="delete-team-submit" type="button" class="btn btn-primary">Delete</button>
+    </form>
+</div>
+
+<!-- Link Add Modal -->
+<div class="modal fade" id="link-add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="link-add-label">Adding new link</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="link-type" class="form-label">
+                            Choose link type
+                        </label>
+                        <select name="link-type" id="link-type">
+                            @foreach (var linkType in (LinkType[])Enum.GetValues(typeof(LinkType)))
+                            {
+                                <option value="@linkType">@linkType</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="link-type" class="form-label">
+                            Write link url
+                        </label>
+                        <input
+                            id="link-url"
+                            type="text">
+                    </div>
+                    <button id="add-link-submit" type="button" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Team Add Modal -->
+<div class="modal fade" id="player-add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="player-add-modal-label">Adding player to team</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="player-email" class="form-label">
+                            Write player email
+                        </label>
+                        <input
+                            id="player-email"
+                            type="text">
+                    </div>
+                    <button id="add-player-submit" type="button" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('update-team-submit')
+    .addEventListener('click', () => {
+        let teamId = document.getElementById('team-id').value
+        let teamNameInput = document.getElementById('name')
+        let imageInput = document.getElementById('image')
+       
+        if (teamNameInput.value === teamNameInput.placeholder
+        && imageInput.value === imageInput.placeholder) {
+            alert('All values equal to old!')
+            return    
+        }
+       
+        if (teamNameInput.value === '') {
+            alert("Fill the fields!")    
+            return
+        }
+        
+        fetch('http://localhost:5002/Admin/Teams/Update/' + teamId, {
+            method: 'PATCH',
+            headers: {
+                  "Content-Type": "application/json"
+                },
+            body: JSON.stringify({
+                teamName: teamNameInput.value,
+                image: imageInput.value
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully updated!')
+                document.location.reload()
+            }
+        })
+        
+    })
+    
+function removeLink(linkType) {
+    let teamId = document.getElementById('team-id').value
+    console.log(1)
+    fetch('http://localhost:5002/Admin/Teams/DeleteLink/' + teamId + '?' + new URLSearchParams({
+          linkType: linkType
+          }), {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.status === 500) {
+            alert('Something went wrong! Please try again')
+            return
+        }
+        if (response.status !== 200) {
+            response.json()
+                .then(json => alert(json.message))
+        }
+        else {
+            alert('Successfully removed!')
+            document.location.reload()
+        }
+    })
+}
+
+function removePlayer(playerId) {
+    let teamId = document.getElementById('team-id').value
+    console.log(1)
+    fetch('http://localhost:5002/Admin/Teams/RemovePlayer/' + teamId + '?' + new URLSearchParams({
+          playerId: playerId
+          }), {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.status === 500) {
+            alert('Something went wrong! Please try again')
+            return
+        }
+        if (response.status !== 200) {
+            response.json()
+                .then(json => alert(json.message))
+        }
+        else {
+            alert('Successfully removed!')
+            document.location.reload()
+        }
+    })
+}
+
+document.getElementById('add-link-submit')
+    .addEventListener('click', () => {
+        let teamId = document.getElementById('team-id').value
+        let linkTypeInput = document.getElementById('link-type')
+        let linkUrlInput = document.getElementById('link-url')
+       
+        if (linkTypeInput.value === 'Undefined') {
+            alert('Choose link type!')
+            return
+        }
+        
+        if (linkUrlInput.value === '') {
+            alert('Write link url!')
+            return
+        }
+       
+        fetch('http://localhost:5002/api/Team/AddLink', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                teamId: teamId,
+                serviceName: linkTypeInput.value, 
+                link: linkUrlInput.value
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully added!')
+                document.location.reload()
+            }
+        })
+    })
+    
+document.getElementById('add-player-submit')
+    .addEventListener('click', () => {
+        let teamId = document.getElementById('team-id').value
+        let playerEmailInput = document.getElementById('player-email')
+        
+        if (playerEmailInput.value === '') {
+            alert('Write player email!')
+            return
+        }
+       
+        fetch('http://localhost:5002/api/Team/AddPlayer', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                teamId: teamId,
+                playerEmail: playerEmailInput.value
+            })
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully added!')
+                document.location.reload()
+            }
+        })
+    })
+    
+document.getElementById('delete-team-submit')
+    .addEventListener('click', () => {
+        if (!confirm('Are you sure to delete this team?'))
+            return
+            
+        let teamId = document.getElementById('team-id').value
+       
+        fetch('http://localhost:5002/Admin/Teams/Delete/' + teamId, {
+            method: 'Delete'
+        })
+        .then(response => {
+            if (response.status === 500) {
+                alert('Something went wrong! Please try again')
+                return
+            }
+            if (response.status !== 200) {
+                response.json()
+                    .then(json => alert(json.message))
+            }
+            else {
+                alert('Successfully deleted!')
+                document.location = 'http://localhost:5002/Admin/Teams'
+            }
+        })
+    })
+</script>

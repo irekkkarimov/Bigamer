@@ -24,6 +24,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYXRjaExpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminMatchList/MatchAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYXRjaExpc3RcTWF0Y2hBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminMatchList/MatchEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYXRjaExpc3RcTWF0Y2hFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminMatchList/MatchTeamEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYXRjaExpc3RcTWF0Y2hUZWFtRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminProfile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9maWxlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,8 +44,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFtTGlzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminTeamList/TeamAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFtTGlzdFxUZWFtQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminTeamList/TeamEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFtTGlzdFxUZWFtRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminUserList/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyTGlzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/AdminUserList/UserEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyTGlzdFxVc2VyRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Booba/Desktop/bigamerFolder/Bigamer/Bigamer/Bigamer.Presentation/Views/Auth/Login.cshtml]

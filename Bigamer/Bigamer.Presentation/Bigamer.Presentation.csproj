@@ -82,4 +82,9 @@
       <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\AdminUserEdit\Index.cshtml" />
+    </ItemGroup>
+
 </Project>
